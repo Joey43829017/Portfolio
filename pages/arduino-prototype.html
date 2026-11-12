@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Prototype - Project Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .project-detail {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: var(--page-bg);
+        }
+
+        .detail-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .project-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--navy-primary);
+        }
+
+        [data-theme="dark"] .project-icon {
+            color: var(--white);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-600);
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        [data-theme="dark"] .back-link {
+            color: var(--gray-400);
+        }
+
+        .detail-content h2 {
+            font-size: 1.5rem;
+            color: var(--navy-primary);
+            margin: 3rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        [data-theme="dark"] .detail-content h2 {
+            color: var(--white);
+        }
+
+        .detail-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        [data-theme="dark"] .detail-content p {
+            color: var(--gray-400);
+        }
+
+        .equation {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .diagram-placeholder {
+            background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+            height: 400px;
+            border-radius: 12px;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--gray-500);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .result-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--navy-primary);
+        }
+
+        [data-theme="dark"] .result-value {
+            color: var(--white);
+        }
+
+        .lessons-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .lessons-list li {
+            padding: 1rem;
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--scarlet-primary);
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <span class="brand-icon">⚙️</span>
+                <span class="brand-text">JK Portfolio</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/#about" class="nav-link">About</a></li>
+                <li><a href="/#projects" class="nav-link active">Projects</a></li>
+                <li><a href="/#skills" class="nav-link">Skills</a></li>
+                <li><a href="/#experience" class="nav-link">Experience</a></li>
+                <li><a href="/#resume" class="nav-link">Resume</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="project-detail">
+        <div class="detail-container">
+            <a href="/" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <div class="project-icon">🔧</div>
+                <h1 style="font-size: 2.5rem; color: var(--navy-primary);">Arduino Prototype System</h1>
+                <p style="color: var(--text-secondary); font-size: 1.2rem;">ME 2900 Control Systems Engineering Project</p>
+            </div>
+
+            <div class="detail-content">
+                <section id="problem-statement">
+                    <h2>Problem Statement</h2>
+                    <p>The project required designing and implementing an embedded control system using Arduino microcontrollers to demonstrate practical applications of sensor integration, actuator control, and real-time data processing in mechanical systems.</p>
+                    <p><strong>Key Objectives:</strong></p>
+                    <ul style="margin-left: 2rem; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Implement multi-sensor data acquisition system</li>
+                        <li>Create closed-loop control with real-time feedback</li>
+                        <li>Demonstrate MATLAB/Simulink model-to-physical validation</li>
+                    </ul>
+                </section>
+
+                <section id="engineering-approach">
+                    <h2>Engineering Approach</h2>
+                    <p>The Arduino prototype integrated multiple sensor types with a central microcontroller for data acquisition and control logic implementation. The system architecture included:</p>
+                    
+                    <div class="equation">
+                        <strong>System Architecture:</strong><br><br>
+                        
+                        Sensors → ADC (10-bit) → Arduino MCU → Control Algorithm → Actuators<br><br>
+                        
+                        Data Flow: Sensor Raw → Filtered → PID Controller → Actuator Command<br><br>
+                        
+                        Sampling Rate: 1kHz for position control, 50Hz for general monitoring
+                    </div>
+
+                    <p><strong>Component Selection:</strong></p>
+                    <ul style="margin-left: 2rem; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Arduino Mega 2560 (32 MHz, 4 UART, 54 PWM pins)</li>
+                        <li>ENC potentiometer encoders for position feedback</li>
+                        <li>Temperature sensors (LM35) for thermal monitoring</li>
+                        <li>Solenoid valves for pneumatic actuation control</li>
+                    </ul>
+                </section>
+
+                <section id="analysis">
+                    <h2>Analysis and Control Design</h2>
+                    
+                    <p><strong>MATLAB Modeling:</strong></p>
+                    <div class="equation">
+                        System Transfer Function:<br>
+                        G(s) = K / (τs + 1)<br><br>
+                        
+                        Where:<br>
+                        K = System gain<br>
+                        τ = Time constant from experimental step response<br><br>
+                        
+                        Discretization for Arduino Implementation:<br>
+                        y[k] = G(z)u[k] + D(z)w[k]<br><br>
+                        
+                        PID Controller in Z-domain:<br>
+                        U(z) = K<sub>p</sub>E(z) + K<sub>i</sub>(1/z)E(z) + K<sub>d</sub>(z-1)/z E(z)
+                    </div>
+
+                    <p><strong>Control Algorithm Implementation:</strong></p>
+                    <ul style="margin-left: 2rem; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Position control using PID algorithm</li>
+                        <li>Feedforward compensation for known disturbances</li>
+                        <li>Anti-windup protection for integral term</li>
+                    </ul>
+                </section>
+
+                <section id="implementation">
+                    <h2>Implementation Details</h2>
+                    
+                    <p><strong>C++ Code Structure:</strong></p>
+                    <div class="equation">
+                        <span style="color: #673ab7; font-weight: bold;">#include</span> &lt;Arduino.h&gt;<br>
+                        <span style="color: #673ab7; font-weight: bold;">#include</span> "sensor_lib.h"<br><br>
+                        
+                        <span style="color: #673ab7; font-weight: bold;">// System State Variables</span><br>
+                        <span style="color: #2196f3; font-weight: bold;">float</span> error, previousError, integral = 0;<br>
+                        <span style="color: #2196f3; font-weight: bold;">int</span> lastTime = millis();<br><br>
+                        
+                        <span style="color: #673ab7; font-weight: bold;">// PID Control Loop</span><br>
+                        <span style="color: #2196f3; font-weight: bold;">void</span> controlLoop() {<br>
+                        &nbsp;&nbsp;&nbsp;error = targetPosition - currentPosition;<br>
+                        &nbsp;&nbsp;&nbsp;integral += error * (SAMPLE_INTERVAL / INTEGRAL_PERIOD);<br>
+                        &nbsp;&nbsp;&nbsp;output = Kp*error + Ki*integral + Kd*(error - previousError);<br>
+                        &nbsp;&nbsp;&nbsp;previousError = error;<br>
+                        &nbsp;&nbsp;&nbsp;setActuator(output);<br>
+                        }<br><br>
+                        
+                        <span style="color: #9e9e9e;">// ... with full implementation</span>
+                    </div>
+
+                    <p><strong>Data Logging:</strong></p>
+                    <ul style="margin-left: 2rem; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Serail communication at 115200 baud for MATLAB data acquisition</li>
+                        <li>Timestamped logging of sensor readings and control outputs</li>
+                        <li>System health monitoring and diagnostic reporting</li>
+                    </ul>
+                </section>
+
+                <section id="results">
+                    <h2>Results and Conclusions</h2>
+                    
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-value">✓</div>
+                            <p class="result-label">Control Goals Met</p>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-value">1kHz</div>
+                            <p class="result-label">Sampling Rate Achieved</p>
+                        </div>
+                    </div>
+
+                    <h3>Key Achievements:</h3>
+                    <ul style="margin-left: 2rem; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Successfully implemented multi-sensor data acquisition system</li>
+                        <li>Achieved stable closed-loop control with PID tuning</li>
+                        <li>Validated MATLAB/Simulink models against physical implementation</li>
+                        <li>Demonstrated real-time processing capabilities of Arduino platform</li>
+                    </ul>
+
+                    <h3>Lessons Learned:</h3>
+                    <ul class="lessons-list">
+                        <li><strong>Sampling Rate Importance:</strong> Higher sampling rates (1kHz vs 50Hz) significantly improved control response and stability margins</li>
+                        <li><strong>Noise Filtering:</strong> Simple moving average filter reduced sensor noise without introducing significant phase lag</li>
+                        <li><strong>Code Optimization:</strong> Critical control loop functions must be deterministic—avoid blocking operations</li>
+                        <li><strong>PID Tuning Methodology:</strong> Ziegler-Nichols method provided good starting point, but manual fine-tuning improved performance by 30%</li>
+                    </ul>
+
+                    <h2>Conclusions and Future Work</h2>
+                    <p>The Arduino prototype successfully demonstrated practical control systems engineering principles. The project validated the ability to:</p>
+                    
+                    <div class="equation">
+                        <strong>Future Enhancement Areas:</strong><br><br>
+                        1.<strong>Additional Sensor Types:</strong> Implement IMU for orientation sensing<br>
+                        2.<strong>Wireless Communication:</strong> Add RF module for remote monitoring/control<br>
+                        3.<strong>Machine Learning:</strong> Implement adaptive PID with neural network tuning<br>
+                        4.<strong>Multi-Arduino Network:</strong> Scale to distributed control system architecture
+                    </div>
+
+                    <p>This project demonstrates strong competency in embedded systems, control theory implementation, real-time programming, and mechatronic system integration.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

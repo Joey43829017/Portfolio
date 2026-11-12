@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Dashboard - Joseph Kozlowski Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .skills-page {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: var(--page-bg);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-600);
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        [data-theme="dark"] .back-link {
+            color: var(--gray-400);
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .skills-section {
+            margin-bottom: 4rem;
+        }
+
+        .skills-section h2 {
+            font-size: 2rem;
+            color: var(--navy-primary);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--scarlet-primary);
+            display: inline-block;
+        }
+
+        [data-theme="dark"] .skills-section h2 {
+            color: var(--white);
+        }
+
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+
+        .category-header {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        [data-theme="dark"] .category-header {
+            color: var(--gray-300);
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] .skill-card:hover {
+            box-shadow: 0 8px 25px rgba(30, 58, 95, 0.3);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .skill-name {
+            color: var(--gray-300);
+        }
+
+        .skill-level {
+            font-weight: 600;
+            color: var(--scarlet-primary);
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: var(--navy-primary);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 12px;
+            transition: width 1s ease;
+        }
+
+        .skill-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--border-color);
+        }
+
+        [data-theme="dark"] .skill-description {
+            color: var(--gray-400);
+        }
+
+        .skill-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .skill-tag {
+            background: rgba(229, 62, 62, 0.1);
+            color: var(--scarlet-primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        [data-theme="dark"] .skill-tag {
+            background: rgba(229, 62, 62, 0.2);
+            color: var(--scarlet-primary);
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <span class="brand-icon">⚙️</span>
+                <span class="brand-text">JK Portfolio</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/#about" class="nav-link">About</a></li>
+                <li><a href="/#projects" class="nav-link">Projects</a></li>
+                <li><a href="/#skills" class="nav-link active">Skills</a></li>
+                <li><a href="/#experience" class="nav-link">Experience</a></li>
+                <li><a href="/#resume" class="nav-link">Resume</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="skills-page">
+        <div class="skills-container">
+            <a href="/" class="back-link">← Back to Portfolio</a>
+
+            <section class="skills-section" id="engineering-software">
+                <h2>Engineering Software Proficiency</h2>
+
+                <!-- MATLAB -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">MATLAB & Simulink</span>
+                        <span class="skill-level">Advanced (90%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Signal processing, numerical modeling, control system design, data analysis. 
+                        Experienced with Simscape Multibody for multibody dynamics simulation.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Simulink</span>
+                        <span class="skill-tag">Simscape</span>
+                        <span class="skill-tag">Signal Processing Toolbox</span>
+                        <span class="skill-tag">Control System Toolbox</span>
+                    </div>
+                </div>
+
+                <!-- SolidWorks -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">SolidWorks</span>
+                        <span class="skill-level">Advanced (85%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Parametric 3D modeling, assembly design, tolerance analysis, engineering drawings.
+                        Created Zero Torque Putter design with MOI optimization.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Part Design</span>
+                        <span class="skill-tag">Assembly</span>
+                        <span class="skill-tag">Drawing Generation</span>
+                        <span class="skill-tag">Simulation</span>
+                    </div>
+                </div>
+
+                <!-- Fusion 360 -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Fusion 360</span>
+                        <span class="skill-level">Advanced (85%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        CAD modeling for rapid prototyping, parametric design, CAM operations. 
+                        Designed multiple physical prototypes with 3D printing workflow.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">CAD Design</span>
+                        <span class="skill-tag">CAM</span>
+                        <span class="skill-tag">3D Printing Workflow</span>
+                    </div>
+                </div>
+
+                <!-- Onshape -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Onshape</span>
+                        <span class="skill-level">Intermediate (75%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Cloud-based CAD collaboration, version control, team projects. 
+                        Experience with document structure and branching.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Cloud CAD</span>
+                        <span class="skill-tag">Collaboration</span>
+                        <span class="skill-tag">Document Management</span>
+                    </div>
+                </div>
+
+                <!-- Engineering Equation Solver (EES) -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Engineering Equation Solver (EES)</span>
+                        <span class="skill-level">Intermediate (70%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Thermodynamic property calculations, system optimization, equation solving. 
+                        Used for thermodynamic cycle analysis and heat exchanger design.
+                    </p>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Python</span>
+                        <span class="skill-level">Intermediate (70%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Data analysis with NumPy/Pandas, visualization with Matplotlib, basic ML with scikit-learn. 
+                        Scripting for automation and data processing.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Data Analysis</span>
+                    </div>
+                </div>
+
+                <!-- LaTeX -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">LaTeX & Overleaf</span>
+                        <span class="skill-level">Intermediate (75%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Academic writing, technical report formatting, equation editing. 
+                        IEEE report template familiarity.
+                    </p>
+                </div>
+
+                <!-- Git/GitHub -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Git & GitHub</span>
+                        <span class="skill-level">Intermediate (75%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Version control, branching strategies, pull requests, code reviews. 
+                        Repository management and collaboration workflows.
+                    </p>
+                </div>
+            </section>
+
+            <section class="skills-section" id="engineering-disciplines">
+                <h2>Engineering Disciplines</h2>
+
+                <!-- Thermodynamics -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Thermodynamics</span>
+                        <span class="skill-level">Advanced (90%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Fundamentals through advanced topics. Heat transfer analysis, cycle efficiency calculations, 
+                        property analysis using EES and MATLAB. Experience with vapor compression cycles, gas power cycles.
+                    </p>
+                </div>
+
+                <!-- System Dynamics -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">System Dynamics</span>
+                        <span class="skill-level">Advanced (85%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Linearization, stability analysis, Laplace transforms. Control system design with PID and 
+                        state-space methods. MATLAB/Simulink simulation for model validation.
+                    </p>
+                </div>
+
+                <!-- Kinematics -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Kinematics and Mechanism Design</span>
+                        <span class="skill-level">Advanced (85%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Linkage synthesis, velocity and acceleration analysis. Screw theory basics. 
+                        Mechanism optimization using CAD simulation.
+                    </p>
+                </div>
+
+                <!-- Machine Design -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Machine Design</span>
+                        <span class="skill-level">Advanced (80%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Component selection, failure analysis, fatigue life prediction. Stress concentration factors, 
+                        design of connections and fasteners. Material selection for mechanical applications.
+                    </p>
+                </div>
+
+                <!-- CAD/Design -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">CAD & Product Design</span>
+                        <span class="skill-level">Advanced (85%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Parametric design thinking, GD&T interpretation, tolerance stack-up analysis. 
+                        Design for manufacturability (DFM) and assembly (DFA).
+                    </p>
+                </div>
+
+                <!-- Machining -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Machining & Manufacturing</span>
+                        <span class="skill-level">Intermediate (70%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        CNC programming fundamentals, process selection, tolerance analysis. 
+                        Familiar with milling, turning, drilling operations.
+                    </p>
+                </div>
+
+                <!-- Arduino/Embedded Systems -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Arduino & Embedded Systems</span>
+                        <span class="skill-level">Advanced (85%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Sensor integration, actuator control, real-time data processing. 
+                        C/C++ programming for microcontrollers, PID implementation.
+                    </p>
+                </div>
+
+                <!-- Data Analysis -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Data Analysis</span>
+                        <span class="skill-level">Intermediate (75%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        MATLAB for statistical analysis, data visualization best practices. 
+                        Experimental design and hypothesis testing.
+                    </p>
+                </div>
+
+                <!-- Finite Element Analysis -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Finite Element Analysis (FEA)</span>
+                        <span class="skill-level">Intermediate (70%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Basic FEA concepts, mesh generation, results interpretation. 
+                        Stress analysis, modal analysis fundamentals.
+                    </p>
+                </div>
+            </section>
+
+            <section class="skills-section" id="technical-skills">
+                <h2>Technical Skills</h2>
+
+                <!-- Quality & Testing -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Quality and Testing</span>
+                        <span class="skill-level">Advanced (80%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Statistical process control, measurement system analysis, hypothesis testing. 
+                        Root cause analysis (Fishbone, 5 Whys). Quality improvement methodologies.
+                    </p>
+                </div>
+
+                <!-- Technical Writing -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Technical Writing</span>
+                        <span class="skill-level">Advanced (85%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        IEEE report formatting, technical documentation creation. 
+                        Clear communication of complex engineering concepts.
+                    </p>
+                </div>
+
+                <!-- Technical Support -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Technical Support</span>
+                        <span class="skill-level">Intermediate (75%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Problem diagnosis, troubleshooting methodologies. 
+                        Communication skills for explaining technical issues to non-experts.
+                    </p>
+                </div>
+
+                <!-- 3D Printing -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">3D Printing (Additive Manufacturing)</span>
+                        <span class="skill-level">Intermediate (75%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        FDM and SLA printing workflows. Material selection for prototyping. 
+                        Support structure generation and removal best practices.
+                    </p>
+                </div>
+            </section>
+
+            <section class="skills-section" id="languages">
+                <h2>Languages</h2>
+
+                <!-- C++ -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">C++</span>
+                        <span class="skill-level">Advanced (80%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Object-oriented programming, memory management. 
+                        Embedded C++ for Arduino and microcontrollers.
+                    </p>
+                </div>
+
+                <!-- Java -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Java</span>
+                        <span class="skill-level">Intermediate (70%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        OOP principles, data structures. 
+                        Algorithm implementation and problem solving.
+                    </p>
+                </div>
+
+                <!-- Python -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Python</span>
+                        <span class="skill-level">Intermediate (70%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Data science libraries (NumPy, Pandas). 
+                        Scripting and automation.
+                    </p>
+                </div>
+
+                <!-- SQL -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">SQL</span>
+                        <span class="skill-level">Intermediate (70%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Database queries, joins, aggregations. 
+                        Data extraction and manipulation.
+                    </p>
+                </div>
+
+                <!-- Spanish -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Spanish</span>
+                        <span class="skill-level">Intermediate (70%)</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%; background: linear-gradient(90deg, var(--scarlet-primary), var(--navy-primary));"></div>
+                    </div>
+                    <p class="skill-description">
+                        Conversational fluency. 
+                        Technical vocabulary in engineering contexts.
+                    </p>
+                </div>
+            </section>
+
+            <section class="skills-section" id="certifications">
+                <h2>Certifications & Training</h2>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Professional Certifications</span>
+                    </div>
+                    <p class="skill-description">
+                        • SolidWorks CSWP Certified<br>
+                        • MATLAB Onramp Certification<br>
+                        [Add additional certifications as applicable]
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <span class="skill-name">Workshops & Short Courses</span>
+                    </div>
+                    <p class="skill-description">
+                        • Fusion 360 Advanced Design<br>
+                        • Arduino IoT Cloud Basics<br>
+                        • Python for Data Science with Engineering Applications
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

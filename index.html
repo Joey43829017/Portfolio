@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Kozlowski | Mechanical Engineering Portfolio</title>
+    <meta name="description" content="Portfolio of Joseph Kozlowski - Mechanical Engineering Student at The Ohio State University specializing in quality and testing with expertise in CAD, thermodynamics, system dynamics, and engineering analysis.">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body data-theme="light">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <span class="brand-icon">⚙️</span>
+                <span class="brand-text">JK Portfolio</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link active">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#resume" class="nav-link">Resume</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="icon">🌙</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <div class="profile-placeholder">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="60" r="40" fill="#1e3a5f" opacity="0.1"/>
+                            <rect x="50" y="85" width="100" height="115" rx="20" fill="#fff"/>
+                            <ellipse cx="100" cy="155" rx="45" ry="30" fill="#1e3a5f" opacity="0.1"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">Joseph Kozlowski</h1>
+                    <p class="hero-subtitle">Mechanical Engineering Student | Undergraduate Teaching Assistant</p>
+                    <p class="hero-intro">I am a Mechanical Engineering student at The Ohio State University with experience in quality and testing. Currently a TA in the OSU department of Mechanical and Aerospace Engineering.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#resume" class="btn btn-secondary">Download Resume</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number" data-target="15" data-unit="+" id="stat-projects"></span>
+                    <span class="stat-label">Engineering Projects Completed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="3" data-unit="+" id="stat-internships"></span>
+                    <span class="stat-label">Internship Experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="4.2" data-unit="" id="stat-gpa"></span>
+                    <span class="stat-label">GPA</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="45" data-unit="+" id="stat-cad"></span>
+                    <span class="stat-label">CAD Models Created</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="bio-section">
+                    <h3>Biography</h3>
+                    <p>Joseph Kozlowski is a dedicated Mechanical Engineering student at The Ohio State University with a passion for quality and testing. His academic journey has been marked by hands-on experience in thermodynamics, system dynamics, kinematics, and machine design. As an Undergraduate Teaching Assistant in the Department of Mechanical and Aerospace Engineering, he actively supports fellow students while deepening his understanding of core engineering principles.</p>
+                    <p>Beyond the classroom, Joseph brings curiosity and creativity to every project—from designing custom golf putters with precision physics-based engineering to building Arduino prototypes that demonstrate practical control systems applications. His work reflects a commitment to excellence in both analytical thinking and hands-on implementation.</p>
+                </div>
+                <div class="mission-section">
+                    <h3>Career Interests</h3>
+                    <p><strong>Engineering Specialties:</strong> Thermodynamics, System Dynamics, Kinematics and Mechanism Design, Machine Design, Machining, Microcontrollers (Arduino IDE)</p>
+                    <p><strong>Professional Mission:</strong> To develop innovative mechanical systems that solve real-world problems while maintaining the highest standards of engineering quality and technical excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card active">
+                    <div class="project-image">
+                        <svg viewBox="0 0 400 250" width="100%" height="200"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#e8f4f8;stop-opacity:1"/><stop offset="100%" style="stop-color:#d0e3f0;stop-opacity:1"/></linearGradient></defs><rect x="0" y="0" width="400" height="250" fill="url(#grad1)"/><circle cx="120" cy="80" r="35" fill="#1e3a5f" opacity="0.2"/><path d="M 100 160 L 140 160 L 140 190 A 30 30 0 0 1 70 190 Z" fill="#e53e3e" opacity="0.8"/><rect x="260" y="80" width="100" height="70" rx="5" fill="#fff" stroke="#1e3a5f" stroke-width="2"/><text x="310" y="110" font-family="monospace" font-size="14">Zero Torque Putter Design</text></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Zero Torque Putter</h3>
+                        <p>Physics-based golf putter design with adjustable toe hang (20°) and MOI ≥5000 g·cm². Features milled face for consistent COR, low/rear CG position, and 3D-printed prototype validation.</p>
+                        <div class="project-tags">
+                            <span>CAD</span><span>Fusion 360</span><span>3D Printing</span><span>Physics Analysis</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card active">
+                    <div class="project-image">
+                        <svg viewBox="0 0 400 250" width="100%" height="200"><defs><linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f0e8e8;stop-opacity:1"/><stop offset="100%" style="stop-color:#e0d0c0;stop-opacity:1"/></linearGradient></defs><rect x="0" y="0" width="400" height="250" fill="url(#grad2)"/><rect x="50" y="60" width="250" height="90" rx="5" fill="#fff" stroke="#1e3a5f" stroke-width="2"/><circle cx="175" cy="105" r="25" fill="#e53e3e"/><path d="M 60 140 L 85 140 L 85 190 A 25 25 0 0 1 35 190 Z" fill="#1e3a5f" opacity="0.9"/><text x="75" y="175" font-family="monospace" font-size="13">Arduino Prototype</text></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Arduino Prototype</h3>
+                        <p>ME 2900 engineering prototype with embedded control systems, sensor integration, and MATLAB modeling for system dynamics analysis and validation.</p>
+                        <div class="project-tags">
+                            <span>Arduino</span><span>MATLAB</span><span>Sensors</span><span>Control Systems</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 400 250" width="100%" height="200"><defs><linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#e8f4d0;stop-opacity:1"/><stop offset="100%" style="stop-color:#d0e0b0;stop-opacity:1"/></linearGradient></defs><rect x="0" y="0" width="400" height="250" fill="url(#grad3)"/><rect x="70" y="60" width="200" height="80" rx="5" fill="#fff" stroke="#1e3a5f" stroke-width="2"/><rect x="275" y="70" width="90" height="60" rx="3" fill="#fff" stroke="#1e3a5f" stroke-width="2"/><text x="95" y="105" font-family="monospace" font-size="13">Air Motor Cylinder & Block</text><path d="M 180 140 L 190 160 L 210 160 L 200 140" fill="none" stroke="#e53e3e" stroke-width="2"/><circle cx="200" cy="160" r="8" fill="#e53e3e"/></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Air Motor Cylinder & Block</h3>
+                        <p>Precision-designed pneumatic cylinder assembly with optimized flow dynamics and structural integrity for high-performance actuation.</p>
+                        <div class="project-tags">
+                            <span>Pneumatics</span><span>CAD</span><span>Fluid Dynamics</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 400 250" width="100%" height="200"><defs><linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f0e8f4;stop-opacity:1"/><stop offset="100%" style="stop-color="#d0c0e0;stop-opacity:1"/></linearGradient></defs><rect x="0" y="0" width="400" height="250" fill="url(#grad4)"/><rect x="80" y="60" width="180" height="90" rx="5" fill="#fff" stroke="#1e3a5f" stroke-width="2"/><circle cx="270" cy="115" r="40" fill="#1e3a5f" opacity="0.15"/><path d="M 115 160 L 135 185 A 25 25 0 0 0 155 160 L 175 185 A 25 25 0 0 0 195 160 L 215 185" fill="none" stroke="#e53e3e" stroke-width="2"/><text x="95" y="105" font-family="monospace" font-size="13">Vibration Isolation System</text><path d="M 90 190 L 300 190" fill="none" stroke="#1e3a5f" stroke-width="1" stroke-dasharray="4,2"/></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Numerical Modeling of Vibration Isolation System</h3>
+                        <p>Advanced numerical modeling and simulation of vibration isolation systems using MATLAB/Simulink with experimental validation.</p>
+                        <div class="project-tags">
+                            <span>MATLAB</span><span>Simulation</span><span>Vibrations</span><span>Numerical Analysis</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <svg viewBox="0 0 400 250" width="100%" height="200"><defs><linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#e8e8f0;stop-opacity:1"/><stop offset="100%" style="stop-color="#c0d0e0;stop-opacity:1"/></linearGradient></defs><rect x="0" y="0" width="400" height="250" fill="url(#grad5)"/><path d="M 70 100 L 320 100 L 330 160 L 80 160 Z" fill="#fff" stroke="#1e3a5f" stroke-width="2"/><rect x="140" y="60" width="90" height="45" rx="3" fill="#fff" stroke="#1e3a5f" stroke-width="2"/><text x="185" y="88" font-family="monospace" font-size="12">Improving Costs in Nursing</text><circle cx="200" cy="140" r="30" fill="#1e3a5f" opacity="0.2"/><path d="M 190 140 L 195 155 L 205 155 L 200 140" fill="none" stroke="#e53e3e" stroke-width="2"/></svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Improving Costs in Nursing</h3>
+                        <p>Efficiency optimization and cost reduction analysis for nursing department operations through engineering-based process improvements.</p>
+                        <div class="project-tags">
+                            <span>Operations</span><span>Cost Analysis</span><span>Process Optimization</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Engineering Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>CAD & Product Design</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Fusion 360</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">SolidWorks</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Onshape</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">3D Printing</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Engineering Analysis</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">MATLAB</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Simulink</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Engineering Equation Solver (EES)</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Data Analysis</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Mechanical Engineering</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Thermodynamics</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">System Dynamics</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Kinematics & Mechanism Design</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Machine Design</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Machining</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 65%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Microcontrollers (Arduino IDE)</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Quality Control</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Testing & Validation</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Technical Documentation</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item active">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Undergraduate Teaching Assistant</h3>
+                        <span class="timeline-date">OSU Department of Mechanical and Aerospace Engineering</span>
+                        <p>Providing academic support to students in core mechanical engineering courses. Facilitating problem-solving sessions and reinforcing fundamental concepts.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Mechanical Engineering Project Lead</h3>
+                        <span class="timeline-date">The Ohio State University</span>
+                        <p>Led interdisciplinary team projects focusing on quality and testing methodologies. Developed innovative solutions for engineering challenges.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Engineering Research Experience</h3>
+                        <span class="timeline-date">Various Projects</span>
+                        <p>Conducted research in thermodynamics, system dynamics, and kinematics. Contributed to multiple published engineering analyses and simulations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-categories">
+                <h3>Technical Focus Areas</h3>
+                <div class="cat-grid">
+                    <div class="cat-item"><span class="check">✓</span><strong>Thermodynamics</strong></div>
+                    <div class="cat-item"><span class="check">✓</span><strong>System Dynamics</strong></div>
+                    <div class="cat-item"><span class="check">✓</span><strong>Kinematics & Mechanism Design</strong></div>
+                    <div class="cat-item"><span class="check">✓</span><strong>Machine Design</strong></div>
+                    <div class="cat-item"><span class="check">✓</span><strong>Machining</strong></div>
+                    <div class="cat-item"><span class="check">✓</span><strong>Microcontrollers (Arduino)</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume-section" id="resume">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume-content">
+                <div class="resume-preview">
+                    <div class="resume-placeholder">
+                        <svg viewBox="0 0 400 300" width="100%" height="250"><rect x="0" y="0" width="400" height="300" fill="#f8f9fa"/><path d="M 40 40 L 360 40 L 360 260 L 40 260 Z" fill="#fff" stroke="#1e3a5f" stroke-width="2"/><circle cx="80" cy="80" r="35" fill="#1e3a5f" opacity="0.1"/><text x="115" y="90" font-family="monospace" font-size="14">Resume PDF</text><path d="M 280 60 L 300 80 M 280 100 L 300 120 M 280 140 L 300 160" stroke="#e53e3e" stroke-width="2"/><text x="295" y="75" font-family="monospace" font-size="12">Download</text></svg>
+                    </div>
+                </div>
+                <div class="resume-actions">
+                    <a href="/OneDrive/Documents/Fall 2026 Resume.pdf" download="Joseph_Kozlowski_Resume.pdf" class="btn btn-primary">Download Resume (PDF)</a>
+                    <p class="resume-note">Comprehensive resume highlighting education, projects, skills, and technical experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always open to discussing engineering opportunities, internship positions, or collaborative projects. Feel free to reach out!</p>
+                    <div class="contact-links">
+                        <a href="mailto:joseph.kozlowski@osu.edu" class="contact-link">
+                            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                            <span>joseph.kozlowski@osu.edu</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M9 19c-5 1.5-2-2.5-2-2.5s4-6 10-6c1.8 0 3 0.7 3.5 1.5l3 3c-.5.7-1.8 1.5-3.5 1.5C12.5 19 7 13.5 7 4c0 0 1-1 4 2s5-1 5 1c0 0 1-1 4 2s1.5 8-5 1z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.93 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.87.84 1.319 1.911 1.319 3.221 0 4.605-2.807 5.625-5.479 5.921.43.352.883 1.102.883 2.222v3.286c0 .319.192.694.801.576C20.566 21.792 24 17.312 24 12c0-6.627-5.373-12-12-12z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>J.Kozlowski</h3>
+                    <p>Mechanical Engineering Portfolio</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <a href="#about">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#experience">Experience</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#resume">Resume</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">GitHub</a>
+                        <a href="mailto:joseph.kozlowski@osu.edu">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Joseph Kozlowski. All rights reserved.</p>
+                <p>Mechanical Engineering Student | The Ohio State University</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Particle Background -->
+    <canvas id="particles" class="particle-canvas"></canvas>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

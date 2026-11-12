@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Experience - Joseph Kozlowski Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .timeline-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .about-section, .experience-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header h1 {
+            font-size: 2.5rem;
+            color: var(--navy-primary);
+            margin-bottom: 2rem;
+        }
+
+        [data-theme="dark"] .section-header h1 {
+            color: var(--white);
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        [data-theme="dark"] .about-content {
+            color: var(--gray-400);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 1.5rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--scarlet-primary);
+            border: 4px solid var(--navy-primary);
+        }
+
+        [data-theme="dark"] .timeline-marker {
+            border-color: var(--white);
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(30, 58, 95, 0.15);
+        }
+
+        [data-theme="dark"] .timeline-content:hover {
+            box-shadow: 0 8px 25px rgba(30, 58, 95, 0.3);
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: var(--scarlet-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        [data-theme="dark"] .timeline-title {
+            color: var(--white);
+        }
+
+        .timeline-subtitle {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        [data-theme="dark"] .timeline-subtitle {
+            color: var(--gray-400);
+        }
+
+        .timeline-description {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .achievements-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        [data-theme="dark"] .achievements-list li {
+            color: var(--gray-400);
+        }
+
+        .achievements-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--scarlet-primary);
+            font-weight: 700;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background: rgba(229, 62, 62, 0.1);
+            color: var(--scarlet-primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        [data-theme="dark"] .tech-tag {
+            background: rgba(229, 62, 62, 0.15);
+            color: var(--scarlet-primary);
+        }
+
+        .mission-statement {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--navy-primary), var(--scarlet-primary));
+            color: white;
+            border-radius: 16px;
+            margin: 4rem 0;
+        }
+
+        [data-theme="dark"] .mission-statement {
+            background: linear-gradient(135deg, var(--white), var(--scarlet-primary) 90%);
+        }
+
+        .mission-statement h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .mission-statement p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-content.visible {
+            animation: fadeInLeft 0.4s ease forwards;
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">
+                <span class="brand-icon">⚙️</span>
+                <span class="brand-text">JK Portfolio</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/#about" class="nav-link active">About</a></li>
+                <li><a href="/#projects" class="nav-link">Projects</a></li>
+                <li><a href="/#skills" class="nav-link">Skills</a></li>
+                <li><a href="/#experience" class="nav-link">Experience</a></li>
+                <li><a href="/#resume" class="nav-link">Resume</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main style="padding-top: 80px; min-height: 100vh; background: var(--page-bg);">
+        <section id="about" class="about-section">
+            <div class="timeline-container">
+                <div class="section-header">
+                    <h1>About Me</h1>
+                </div>
+
+                <div class="about-content">
+                    <p style="font-size: 1.3rem; color: var(--navy-primary);">
+                        Hello! I'm Joseph Kozlowski, a Mechanical Engineering student at The Ohio State University with a passion for designing innovative solutions and solving complex engineering problems.
+                    </p>
+
+                    <h2 style="color: var(--navy-primary); margin-top: 2rem;">Professional Mission</h2>
+                    <p style="font-size: 1.15rem; color: var(--text-secondary);">
+                        I am driven by curiosity and a commitment to continuous learning. My engineering journey has taught me that great designs emerge from understanding fundamental physics, rigorous analysis, and iterative prototyping.
+                    </p>
+
+                    <h2 style="color: var(--navy-primary); margin-top: 2rem;">Engineering Specialties</h2>
+                    <ul style="margin-left: 2rem; margin-top: 1rem; color: var(--text-secondary);">
+                        <li><strong>Quality and Testing:</strong> Statistical analysis, measurement system analysis, root cause problem-solving</li>
+                        <li><strong>CAD & Design:</strong> Fusion 360, SolidWorks, parametric modeling, rapid prototyping with 3D printing</li>
+                        <li><strong>Thermodynamics:</strong> Cycle analysis, heat transfer, property calculations</li>
+                        <li><strong>System Dynamics:</strong> Control theory, PID implementation, MATLAB/Simulink simulation</li>
+                        <li><strong>Engineering Analysis:</strong> FEA basics, experimental validation, data interpretation</li>
+                    </ul>
+
+                    <div class="mission-statement">
+                        <h3>My Mission</h3>
+                        <p>To leverage my mechanical engineering expertise and passion for innovation to develop products and systems that improve efficiency, enhance performance, and solve real-world challenges.</p>
+                    </div>
+
+                    <h2 style="color: var(--navy-primary); margin-top: 2rem;">Career Interests</h2>
+                    <p style="font-size: 1.15rem; color: var(--text-secondary);">
+                        I am particularly interested in joining companies focused on precision manufacturing, mechatronic systems design, and data-driven engineering analysis. My goal is to contribute to high-impact projects while continuing to grow as an engineer.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section">
+            <div class="timeline-container">
+                <div class="section-header">
+                    <h1>Experience</h1>
+                </div>
+
+                <!-- Teaching Assistant Position -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Undergraduate Teaching Assistant | Present</div>
+                        <div class="timeline-title">Department of Mechanical and Aerospace Engineering</div>
+                        <p class="timeline-subtitle">The Ohio State University, Columbus, OH</p>
+                        
+                        <p class="timeline-description">
+                            Currently serving as a TA for introductory mechanical engineering courses, providing academic support to undergraduate students while deepening my own understanding of fundamental engineering principles.
+                        </p>
+
+                        <div class="achievements-list">
+                            <ul style="margin-left: 1rem;">
+                                <li>Mentoring 15-20 students weekly in problem-solving and homework assistance</li>
+                                <li>Leading tutorial sessions on thermodynamics, system dynamics, and engineering analysis</li>
+                                <li>Creating study guides and practice problems to support student learning</li>
+                                <li>Fostering an inclusive learning environment that encourages questions and critical thinking</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-tags">
+                            <span class="tech-tag">Student Mentoring</span>
+                            <span class="tech-tag">Academic Support</span>
+                            <span class="tech-tag">Thermodynamics</span>
+                            <span class="tech-tag">System Dynamics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more internship experiences here -->
+                
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
