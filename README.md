@@ -37,20 +37,39 @@ Golf_Putter_Portfolio/
 
 ## The Zero Torque Golf Putter — Key Specs
 
-**The Challenge:** Traditional putters suffer from face rotation and inconsistent alignment. My solution eliminates unwanted torsion for improved accuracy.
+**From IEEE Report:** Complete physics-based design specification documented in attached PDF report (9 pages, includes equations, materials tables, and manufacturing constraints).
 
-| Metric | Value |
-|--------|-------|
-| **MOI** (Moment of Inertia) | 2850 g·cm² |
+**Technical Highlights:**
+| Metric | Specification |
+|--------|---------------|
+| **MOI** (Moment of Inertia) | ≥ 5000 g·cm² (forgiveness guaranteed) |
+| **Static Loft** | 3.5° ± 0.5° (consistent launch) |
+| **Coefficient of Restitution** | 0.65 ± 0.5 (energy transfer optimized) |
 | **Torsional Stability** | ±0.5° |
-| **Design → Production** | 6 months |
-| **Manufacturing** | CNC Machined + Black Anodized |
+| **Initial Topspin** | ≥ 15 rad/s (skid-roll transition control) |
 
 ### Engineering Journey
 - **Months 0-2:** Market research & competitive analysis
-- **Months 2-4:** CAD development (Fusion 360/Onshape)
-- **Months 4-5:** Design for Manufacturing (GD&T, DFM)
-- **Months 5-6:** CNC production & quality testing
+- **Months 2-4:** CAD development (Fusion 360/Onshape) with iterative revisions
+- **Months 4-5:** Design for Manufacturing (GD&T, DFM), material selection
+- **Months 5-6:** CNC production via Xometry, quality testing
+
+---
+
+## IEEE Report Integration
+
+The full engineering report is integrated into the website as a downloadable PDF. The report includes:
+
+- 📋 Complete design specification table (Table I)
+- 🧮 Physics foundation equations (MOI, dynamic loft, gravitational torque)
+- 🔬 Materials selection rationale (6061 aluminum, 304 stainless steel)
+- ⚙️ Manufacturing constraints and tolerance specifications
+- 📐 CAD model evolution and revision notes
+- ✅ Quality assurance documentation with engraved identification
+
+**Download the full report:** [Click here to view IEEE report](./putter-report.pdf)
+
+---
 
 ---
 

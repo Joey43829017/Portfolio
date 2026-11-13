@@ -646,3 +646,199 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Technical Specifications Section */
+.technical-specs-section {
+    padding: 6rem 0;
+    background: var(--bg-secondary);
+}
+
+.technical-specs-section h2 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.spec-card {
+    background: var(--bg-tertiary);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.spec-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+}
+
+.spec-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.spec-card th,
+.spec-card td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.spec-card th {
+    font-weight: 600;
+    color: var(--text-secondary);
+    width: 25%;
+}
+
+.spec-card td:first-child {
+    width: 25%;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Physics Equations */
+.physics-equations {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.equation {
+    background: var(--bg-tertiary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.equation-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.equation-math {
+    font-family: 'Courier New', monospace;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.equation-note {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+/* Materials Section */
+.materials-section {
+    margin-bottom: 4rem;
+}
+
+.materials-section h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.material-card {
+    background: var(--bg-tertiary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.material-card h4 {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.material-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+/* Zero Torque Explanation */
+.zero-torque-explanation {
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.zero-torque-explanation h3 {
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.zero-torque-explanation p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.zero-torque-explanation ul {
+    list-style: none;
+}
+
+.zero-torque-explanation li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.zero-torque-explanation li strong {
+    color: var(--accent);
+}
+
+/* Button styles for report links */
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    background: var(--accent-glow);
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .specs-grid,
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+}
