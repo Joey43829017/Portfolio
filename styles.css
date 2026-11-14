@@ -7,16 +7,16 @@
 
 :root {
     --bg-primary: #0a0a0b;
-    --bg-secondary: #121214;
-    --bg-tertiary: #1a1a1d;
-    --accent: #3b82f6;
-    --accent-glow: rgba(59, 130, 246, 0.3);
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #242424;
+    --accent: #ed1c24; /* Ohio State Scarlet */
+    --accent-glow: rgba(237, 28, 36, 0.3);
     --text-primary: #ffffff;
     --text-secondary: #a0a0a0;
     --text-muted: #606060;
-    --border: #262626;
+    --border: #3b3b3b; /* Ohio State Grey */
     --success: #10b981;
-    --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --gradient-accent: linear-gradient(135deg, #ed1c24 0%, #8b4343 100%); /* Scarlet to Dark Red gradient */
 }
 
 html {
@@ -635,19 +635,242 @@ body {
     animation: fadeInUp 0.6s ease-out forwards;
 }
 
-/* Scroll animations */
-.fade-on-scroll {
+/* Premium Glassmorphism Effect */
+.glass-card {
+    background: rgba(26, 26, 29, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Glow Effects */
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+    50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.1); }
+}
+
+.glow-hover:hover {
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Staggered Animation Delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+
+/* Number Counter Animation */
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.metric-value {
+    animation: countUp 0.8s ease-out forwards;
+}
+
+/* Floating Decoration Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient Border Animation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-border {
+    position: relative;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), transparent);
+    z-index: -1;
+    animation: gradientShift 8s ease infinite;
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    width: 0%;
+    transition: width 0.1s ease;
+    z-index: 9999;
+}
+
+/* Parallax Hero Background */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(ellipse at 20% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+    animation: pulseGlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2);
+}
+
+/* Text Gradient Accent */
+.gradient-text {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradientShift 6s ease infinite;
+}
+
+/* Smooth Image Loading */
+.lazy-load {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.5s ease;
+}
+
+.loaded .lazy-load {
+    opacity: 1;
+}
+
+/* Line-through decoration for tables */
+.spec-card td:not(:first-child) {
+    position: relative;
+}
+
+.spec-card td:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 1px;
+    background: var(--border);
+}
+
+/* Physics Equation Highlight */
+.equation-math {
+    position: relative;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, transparent 100%);
+    border-left: 3px solid var(--accent);
+}
+
+.equation-math::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+/* Materials Card Enhancement */
+.material-card {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.material-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.03) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.material-card:hover::before {
+    opacity: 1;
+}
+
+.material-card h4 {
+    position: relative;
+    z-index: 1;
+}
+
+.material-card p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Table Row Hover Effect */
+.spec-card tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.spec-card tr:first-child td {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Badge Animation */
+@keyframes badgePop {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.project-badge, .project-tag, .featured-badge, .project-stats span {
+    animation: badgePop 0.4s ease-out forwards;
+}
+
+/* Timeline Animation */
+@keyframes timelineFlow {
+    from { left: 0; }
+    to { left: 100%; }
+}
+
+.timeline::before {
+    animation: timelineFlow 8s linear infinite;
+    opacity: 0.3;
 }
 
 .fade-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
+    animation: fadeInUp 0.6s ease-out;
 }
 
-/* Technical Specifications Section */
+/* Responsive */
+@media (max-width: 968px) {
+    .specs-grid,
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+}
 .technical-specs-section {
     padding: 6rem 0;
     background: var(--bg-secondary);

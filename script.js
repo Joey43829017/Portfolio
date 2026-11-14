@@ -12,13 +12,95 @@ document.addEventListener('DOMContentLoaded', function() {
     setupScrollAnimations();
 });
 
+// Animate elements as they come into view - Enhanced with staggered animations
+function setupScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px 100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-on-scroll-visible');
+                
+                // Add staggered animation class
+                const allElements = Array.from(document.querySelectorAll('.fade-on-scroll'));
+                const index = allElements.indexOf(entry.target);
+                if (index >= 0 && index < 4) {
+                    entry.target.classList.add(`stagger-${(index % 4) + 1}`);
+                }
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.fade-on-scroll').forEach(el => {
+        el.classList.add('fade-on-scroll');
+        observer.observe(el);
+    });
+}
+
+// Add smooth scroll to section with spring animation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
+        if (target) {
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+                top: targetPosition - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Scroll progress indicator at top of page
+function setupScrollProgress() {
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    progressBar.id = 'scroll-progress-bar';
+    document.body.insertBefore(progressBar, document.body.firstChild);
+    
+    window.addEventListener('scroll', function() {
+        const winScroll = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (winScroll / docHeight) * 100;
+        progressBar.style.width = `${progress}%`;
+    });
+}
+
+setupScrollProgress();</parameter>
+<parameter=old_string>
 // Animate elements as they come into view
 function setupScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px 100px 0px'
     };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-on-scroll-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.fade-on-scroll').forEach(el => {
+        el.classList.add('fade-on-scroll');
+        observer.observe(el);
+    });
+}
 
+// Animate elements on page load with stagger effect</parameter>
+<parameter=path>
+C:/Users/joeyk/Golf_Putter_Portfolio/script.js
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
