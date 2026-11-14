@@ -1019,34 +1019,72 @@ section {
 }
 
 .skill-category li {
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     border-bottom: 1px solid var(--border);
     color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    transition: all var(--transition-base);
+}
+
+.skill-category li:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+    border-color: var(--accent-glow);
+}
+
+.skill-category li strong {
+    color: var(--text-primary);
+}
+
+.skill-category li:last-child {
+    border-bottom: none;
 }
 
 .about-image img {
     width: 100%;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 8px 32px rgba(225, 29, 72, 0.2);
+}
+
+.resume-download {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(145deg, rgba(225, 29, 72, 0.1) 0%, rgba(26, 26, 26, 0.8) 100%);
+    border-radius: 12px;
+    border: 1px solid var(--accent-glow);
+}
+
+.resume-download h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--accent);
 }
 
 /* Contact Section */
 .contact-section {
     padding: 6rem 0;
-    background: var(--bg-secondary);
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
     text-align: center;
 }
 
 .contact-section h2 {
     font-size: clamp(1.75rem, 6vw, 2.5rem);
     margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .contact-section p {
     color: var(--text-secondary);
     font-size: 1.1rem;
     margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-links {
@@ -1064,11 +1102,32 @@ section {
     border: 2px solid var(--accent);
     border-radius: 8px;
     transition: all 0.3s ease;
+    background: var(--bg-tertiary);
 }
 
 .contact-link:hover {
-    background: var(--accent-glow);
+    background: linear-gradient(135deg, rgba(225, 29, 72, 0.2) 0%, rgba(225, 29, 72, 0.05) 100%);
     transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.contact-link.github {
+    color: #fff;
+    background: #333;
+    border-color: #444;
+}
+
+.contact-link.linkedin {
+    color: #0077b5;
+    border-color: #0088cc;
+}
+
+.contact-link:hover.github {
+    background: #444;
+}
+
+.contact-link:hover.linkedin {
+    background: rgba(0, 119, 181, 0.1);
 }
 
 .footer {
