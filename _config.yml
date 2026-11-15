@@ -1,0 +1,22 @@
+# Site settings
+name: Joey Kozlowski Portfolio
+title: Joey Kozlowski | Mechanical Engineer & Agentic AI Developer
+description: From concept to production. Physics-first design. Autonomous systems for intelligent agents.
+baseurl: "/Portfolio/"
+url: "https://joeyk.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# For GitHub Pages hosting
+gh-pages:
+  - /deployments/main
+  - main
+
+collections:
+  images:
+    output: true
+    permalink: /images/:path.png
+
+permalink: /:title/
