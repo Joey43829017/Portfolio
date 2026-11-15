@@ -1,0 +1,20 @@
+# Keep everything except node_modules and build artifacts
+node_modules/
+.DS_Store
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# Don't commit large binary blobs or backup copies
+backup_original/
+backup_v1/
+_scratch*
+.idea/
+.vscode/
+*.swp
+*.swo
+~$*
+
+# Never commit secrets/keys (add your own if needed)
+.env
+credentials.txt
