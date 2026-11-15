@@ -23,6 +23,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
             <h1>Mechanical Engineering<br>& Agentic AI Development</h1>
             <p>From concept to production. Physics-first design.<br>Autonomous systems for intelligent agents.</p>
@@ -218,6 +219,118 @@
         </div>
     </section>
     
+    <!-- Lazy Man Alarm Snoozer Detail Section -->
+    <section id="snoozer-detail" class="snoozer-detail-section">
+        <div class="container">
+            <div class="project-badge">PROJECT HIGHLIGHT</div>
+            <h2>The Lazy Man Alarm Snoozer</h2>
+            <p class="tagline">ME 2900 Arduino Prototype Project · The Ohio State University</p>
+
+            <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap:3rem; margin-top:2rem;">
+                <div>
+                    <!-- Note: Poster image not rendered due to missing PDF/image libraries. 
+                         Original poster from ME 2900 Arduino Prototype Report is available at source PDFs. -->
+                    <svg viewBox="0 0 600 450" style="width:100%; height:auto; border-radius:16px; box-shadow:var(--shadow-md); background:#1a1d23;" role="img" aria-label="ME 2900 Arduino Prototype Report Poster">
+                        <!-- SVG placeholder for the poster -->
+                        <defs>
+                            <linearGradient id="posterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#2a3449"/>
+                                <stop offset="100%" stop-color="#1a1d23"/>
+                            </linearGradient>
+                            <filter id="textGlow">
+                                <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                                <feMerge>
+                                    <feMergeNode in="blur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Background -->
+                        <rect width="600" height="450" fill="url(#posterGrad)"/>
+                        
+                        <!-- Header bar -->
+                        <rect x="30" y="30" width="540" height="70" rx="8" fill="#e11d48" opacity="0.92"/>
+                        <text x="300" y="66" text-anchor="middle" font-family="'Courier New',monospace" font-size="20" fill="#ffffff" filter="url(#textGlow)">ME 2900 Arduino Prototype</text>
+                        
+                        <!-- Main title -->
+                        <text x="300" y="150" text-anchor="middle" font-family="'Courier New',monospace" font-size="46" fill="#fbbf24" filter="url(#textGlow)">The Lazy Man</text>
+                        <text x="300" y="200" text-anchor="middle" font-family="'Courier New',monospace" font-size="46" fill="#fbbf24" filter="url(#textGlow)">Alarm Snoozer</text>
+                        
+                        <!-- Subtitle -->
+                        <text x="300" y="250" text-anchor="middle" font-family="'Courier New',monospace" font-size="18" fill="#9ca3af">IR Remote · Servo Motor · Arduino Mega · Sound Detection</text>
+                        
+                        <!-- Feature icons row -->
+                        <g transform="translate(150,290)" text-anchor="middle" font-family="'Courier New',monospace">
+                            <circle cx="-60" cy="0" r="34" fill="#e11d48"/>
+                            <text x="-60" y="5" font-size="26">📡</text>
+                            <text x="-60" dy="42" font-size="15">IR Remote</text>
+                            
+                            <circle cx="0" cy="0" r="34" fill="#fbbf24"/>
+                            <text x="0" y="5" font-size="26">🤖</text>
+                            <text x="0" dy="42" font-size="15">Servo Arm</text>
+                            
+                            <circle cx="60" cy="0" r="34" fill="#f97316"/>
+                            <text x="60" y="5" font-size="26">🔊</text>
+                            <text x="60" dy="42" font-size="15">Sound Sensor</text>
+                        </g>
+                        
+                        <!-- Footer -->
+                        <rect x="30" y="400" width="540" height="28" rx="6" fill="#eab308" opacity="0.9"/>
+                        <text x="300" y="417" text-anchor="middle" font-family="'Courier New',monospace" font-size="13" fill="#ffffff">The Ohio State University · ME 2900</text>
+                    </svg>
+                </div>
+
+                <div class="snoozer-content">
+                    <h3>The Problem</h3>
+                    <p>Waking up on a Monday morning to the sound of a blaring alarm is unpleasant — and turning it off requires physical movement out of bed, which is difficult for people with mobility issues or simply those who don't want to move. The goal was simple: turn off an alarm without leaving your bed.</p>
+
+                    <h3>The Solution</h3>
+                    <p>An infrared remote and servo motor drive a robotic arm that presses the power button on your phone, silencing the alarm from across the room. A sound sensor confirms an actual alarm is ringing before actuating — preventing false triggers from ambient noise.</p>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.5rem;">
+                        <div class="feature-box">
+                            <span class="feature-icon">📡</span>
+                            <h4>Infrared Remote (NEC)</h4>
+                            <p style="font-size:.85rem; color:var(--text-secondary);">Wireless wake trigger; reads NEC protocol command codes. Only 1 digital pin required on the Arduino.</p>
+                        </div>
+                        <div class="feature-box">
+                            <span class="feature-icon">🤖</span>
+                            <h4>Servo Motor (Digital Pin 9)</h4>
+                            <p style="font-size:.85rem; color:var(--text-secondary);">Rotates arm 135° to reliably contact and press the phone's power button.</p>
+                        </div>
+                        <div class="feature-box">
+                            <span class="feature-icon">🔊</span>
+                            <h4>Sound Sensor Module</h4>
+                            <p style="font-size:.85rem; color:var(--text-secondary);">Analog threshold detection (>75% analog value) confirms a real alarm is ringing.</p>
+                        </div>
+                        <div class="feature-box">
+                            <span class="feature-icon">💡</span>
+                            <h4>Yellow LED (Pin 3)</h4>
+                            <p style="font-size:.85rem; color:var(--text-secondary);">Visual confirmation that the sound sensor is active and monitoring.</p>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top:1.75rem;">How It Works</h3>
+                    <ol style="padding-left:1.25rem; color:var(--text-secondary); line-height:1.8;">
+                        <li><strong>I wake the device:</strong> Press any button on the IR remote — the receiver (NEC protocol, pin 2) signals the Arduino to enable the system.</li>
+                        <li><strong>The alarm sounds:</strong> The sound sensor picks up audio frequencies near the phone's speaker. Analog values are mapped to a 0–100% percentage scale; above ~75% indicates an active alarm.</li>
+                        <li><strong>The arm actuates:</strong> When the threshold is exceeded, the servo motor sweeps from 0° → 135° at 25ms intervals (smooth motion), then returns — pressing the phone's power button to silence it.</li>
+                        <li><strong>Status feedback:</strong> The yellow LED confirms sound-sensor activation, and the LCD displays messages like "Good Night, Sleep Tight!" via a shift register (reducing MCU pin usage).</li>
+                    </ol>
+
+                    <h3 style="margin-top:1.75rem;">Engineering Notes & Challenges</h3>
+                    <p><strong>Servo jitter fix:</strong> The servo initially jitted due to redundant setup commands in the sketch (manually setting pinMode OUTPUT + digitalWrite). The <code>Servo.h</code> library handles initialization automatically — removing those lines eliminated the issue.</p>
+                    <p style="margin-top:.75rem;"><strong>Baud rate:</strong> Serial communication runs at 115200 baud to accommodate the IR remote's NEC decoder.</p>
+                    <p style="margin-top:.75rem;"><strong>Servicing threshold calibration:</strong> The sound sensor's optimal threshold was user-calibrated against multiple alarm sounds; ~7% of full capacity reliably triggers actuation without false positives from room tone.</p>
+
+                    <a href="#contact" class="btn btn-primary" style="margin-top:2rem;">✎ Discuss This Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Additional Projects -->
     <section id="projects" class="projects-section">
         <div class="container">
@@ -238,7 +351,24 @@
                         <span>15% Sharpe</span>
                     </div>
                     <a href="#" class="btn btn-outline">Learn More →</a>
+                </article>                <!-- Lazy Man Alarm Snoozer -->
+                <article class="project-card featured" style="border-left:4px solid var(--accent);">
+                    <div class="project-header">
+                        · · · <span class="project-tag">Arduino / Mechatronics</span>
+                        <span class="featured-badge" style="background:#e11d48; color:#fff;">Project Highlight</span>
+                    </div>
+                    · · · <h3>Remote-Controlled Alarm Snoozer</h3>
+                                        <p>An IR remote-triggered robotic arm that silently snoozes phone alarms without requiring the user to leave bed — perfect for sleepers with mobility constraints. Sound-sensing, LCD status display, and LED indicator complete the prototype.</p>
+                    <div class="project-stats">
+                        <span>Arduino / Servo</span>
+                        <span>IR Remote</span>
+                        <span>Sound Sensor</span>
+                        <span>LCD 74HC595</span>
+                    </div>
+                    <a href="#snoozer-detail" class="btn btn-outline">Learn More →</a>
                 </article>
+
+
 
                 <!-- Other projects can be added here -->
             </div>

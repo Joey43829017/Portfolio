@@ -174,3 +174,13 @@ Open to collaboration on mechanical design and agentic AI projects.
 ## License
 
 MIT License — feel free to use this portfolio template for your own engineering projects!
+
+---
+
+## Additional Projects
+
+### Lazy Man Alarm Snoozer (Arduino / Mechatronics)
+An IR remote-triggered robotic arm prototype that silently snoozes phone alarms without requiring the user to leave bed. Built for ME 2900 at The Ohio State University using Arduino Mega, servo motors, sound sensors, and NEC protocol infrared remotes.
+
+See full project detail on the website under "The Lazy Man Alarm Snoozer" section.
+Source documents: ME 2900 Arduino Prototype Report & Poster PDFs (OneDrive/Documents/).
