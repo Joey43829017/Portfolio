@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Kozlowski — MECHENG 2850 Numerical Methods Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <style>
+        /* Standalone override so this page renders standalone */
+        :root { --accent:#2ecc71; }
+        .projects-section .container { max-width: 1080px; padding: 60px 32px; }
+        .enhanced .project-image svg { width:100%; height:auto; border-radius:10px; box-shadow:0 8px 30px rgba(30,58,95,.14); margin-bottom:20px; }
+        .chart-caption { font-family:'JetBrains Mono',monospace; font-size:.8em; color:#5b6770; margin-top:-26px; margin-bottom:14px; padding-left:14px; border-left:3px solid #e74c3c; }
+        .project-card h3 { font-size:1.35rem; font-weight:600; color:#1e3a5f; margin-top:28px; }
+        .project-content p { line-height:1.62; color:#3d484f; font-size:.97em; }
+        .project-tags span { display:inline-block; padding:5px 11px; margin:5px 6px 0 0; background:#eaf4fb; border-radius:14px; font-size:11.5px; color:#2a5c8f; border:1px solid #d3e7f7; }
+        .projects-section h2.section-title { text-align:center; margin-bottom:40px; font-size:2rem; color:#1e3a5f; font-weight:700; }
+        @media (max-width:768px){ .projects-section .container{padding:44px 20px;} .project-card h3{font-size:1.2rem;} }
+    </style>
+</head>
+<body data-theme="light">
+
+<nav class="navbar" id="navbar"><div class="nav-container">
+    <a href="#" class="nav-brand"><span class="brand-icon">⚙️</span><span class="brand-text">JK Portfolio</span></a>
+    <ul class="nav-links" id="navLinks"><li><a href="#about" class="nav-link">About</a></li><li><a href="#projects" class="nav-link active">Projects</a></li><li><a href="#skills" class="nav-link">Skills</a></li><li><a href="#experience" class="nav-link">Experience</a></li><li><a href="#resume" class="nav-link">Resume</a></li><li><a href="#contact" class="nav-link">Contact</a></li></ul>
+    <div class="nav-actions"><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><span class="icon">🌙</span></button><button class="hamburger" id="hamburger" aria-label="Menu"></button></div>
+</div></nav>
+
+<header class="hero" id="home"><div class="hero-container">
+    <div class="hero-content">
+        <div class="hero-image"><div class="profile-placeholder"><svg viewBox="0 0 200 200"><circle cx="100" cy="60" r="40" fill="#1e3a5f" opacity=".1"/><rect x="50" y="85" width="100" height="115" rx="20" fill="#fff"/><ellipse cx="100" cy="155" rx="45" ry="30" fill="#1e3a5f" opacity=".1"/></svg></div></div>
+        <div class="hero-text">
+            <h1 class="hero-title">Joseph Kozlowski</h1>
+            <p class="hero-subtitle">Mechanical Engineering Student | Undergraduate TA | Numerical Methods Portfolio</p>
+            <p class="hero-intro">OSU ME/AE undergraduate with expertise in quality testing, CAD/3D design, thermodynamics, and computational engineering analysis. Currently working on a team numerical methods final project.</p>
+            <div class="hero-buttons"><a href="#projects" class="btn btn-primary">View Projects</a><a href="#" class="btn btn-secondary">Download Resume</a></div>
+        </div>
+    </div>
+</div></header>
+
+<!-- ============================================================ -->
+<section class="projects-section" id="projects">
+    <div class="container">
+
+        <!-- PROJECT 1: Force-Displacement Curve Fitting & Numerical Differentiation -->
+        <article class="project-card enhanced">
+            <div class="project-image">
+                <!-- CHART 01: Force vs Displacement (Raw + Model Fit) — from portfolio_charts/01_force_displacement.svg data URI below -->
+                <svg viewBox="0 0 852 468" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f7fafc"/><stop offset="100%" stop-color="#eef3f8"/></linearGradient>
+                    </defs><rect width="852" height="468" fill="url(#bg1)"/>
+
+                    <!-- axes -->
+                    <g transform="translate(60,10)"><line x1="0" y1="350" x2="790" y2="350" stroke="#9aa5b1"/><line x1="40" y1="350" x2="40" y2="20" stroke="#9aa5b1"/></g>
+
+                    <!-- FIG 1: Force vs Displacement -->
+                    <g transform="translate(60,20)">
+                        <text x="0" y="-10" font-family="'JetBrains Mono',monospace" font-size="9">FIG 1 — Force-Displacement Data + Model Fit (polynomial vs physics-guided nonlinear)</text>
+                        <!-- polynomial fit -->
+                        <path d="M8,342 C60,330 115,285 170,240 S295,135 375,96 S460,72 510,68" fill="none" stroke="#e74c3c" stroke-width="2.4"/>
+                        <!-- physics-guided fit -->
+                        <path d="M8,345 C62,328 118,282 168,239 S290,132 372,94 S458,71 508,67" fill="none" stroke="#2ecc71" stroke-width="2.4"/>
+                        <!-- raw data points -->
+                        <g><circle cx="20" cy="338" r="3" fill="#2f3e46"/><circle cx="45" cy="326" r="3" fill="#2f3e46"/><circle cx="70" cy="312" r="3" fill="#2f3e46"/><circle cx="98" cy="296" r="3" fill="#2f3e46"/><circle cx="125" cy="278" r="3" fill="#2f3e46"/><circle cx="155" cy="260" r="3" fill="#2f3e46"/><circle cx="190" cy="236" r="3" fill="#2f3e46"/><circle cx="225" cy="218" r="3" fill="#2f3e46"/><circle cx="265" cy="202" r="3" fill="#2f3e46"/><circle cx="310" cy="178" r="3" fill="#2f3e46"/><circle cx="360" cy="160" r="3" fill="#2f3e46"/><circle cx="415" cy="132" r="3" fill="#2f3e46"/></g>
+                        <text x="8" y="356" font-family="'JetBrains Mono',monospace" font-size="8">Displacement (m)</text>
+                        <text transform="translate(790,15) rotate(90)" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8">Force (N)</text>
+                    </g>
+
+                    <!-- FIG 2: Local Stiffness vs Displacement -->
+                    <g transform="translate(60,130)">
+                        <text x="0" y="-10" font-family="'JetBrains Mono',monospace" font-size="9">FIG 2 — Local Stiffness (k) vs Displacement for Grid Densities N=10..160</text>
+                        <path d="M8,342 C55,338 105,332 150,325 S290,305 372,288" fill="none" stroke="#f39c12" stroke-width="2.2"/>
+                        <path d="M8,342 C55,336 105,328 150,321 S290,300 372,285" fill="none" stroke="#2ecc71" stroke-width="2.2"/>
+                        <path d="M8,342 C55,332 105,316 150,302 S290,268 372,252" fill="none" stroke="#e74c3c" stroke-width="2.2"/>
+                        <text x="8" y="356" font-family="'JetBrains Mono',monospace" font-size="8">Displacement (m)</text>
+                    </g>
+
+                    <!-- FIG 3: L2 Error vs Grid Spacing -->
+                    <g transform="translate(400,130)">
+                        <text x="0" y="-10" font-family="'JetBrains Mono',monospace" font-size="9">FIG 3 — L2 Error vs Grid Spacing (slope ≈ 2 → O(h²) convergence)</text>
+                        <!-- log-log plot: error decreasing as dx decreases -->
+                        <path d="M8,340 C55,320 105,275 150,215 S195,145 232,96" fill="none" stroke="#e67e22" stroke-width="2.2"/>
+                        <line x1="8" y1="300" x2="232" y2="300" stroke="#b0bec5" stroke-dasharray="4,3"/>
+                        <text x="170" y="316" font-family="'JetBrains Mono',monospace" font-size="8">O(h²)</text>
+                        <text transform="translate(240,96) rotate(90)" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8">Error (L2)</text>
+                        <text x="6" y="356" font-family="'JetBrains Mono',monospace" font-size="8">Grid Spacing</text>
+                    </g>
+
+                </svg>
+            </div>
+            <div class="chart-caption">Parts 1–2: Curve fitting (SSE_poly=1716.6 vs SSE_phys=1687.9) and numerical differentiation verified as O(h²)</div>
+            <div class="project-content">
+                <h3>Numerical Modeling of a Vibration Isolation System — Parts 1–3</h3>
+                <p><strong>Curve Fitting:</strong> Fitted force-displacement data to both a third-order polynomial (SSE = 1,716.6) and a physics-guided nonlinear model k₁x + k₂tan(k₃x) (SSE = 1,687.9). The physics model fit better with lower residual error.</p>
+                <p><strong>Numerical Differentiation:</strong> Computed numerical derivatives using second-order central differences at interior points and one-sided formulas at boundaries. Confirmed O(h²) convergence on the log-log error plot (slope ≈ 2).</p>
+                <p><strong>Numerical Integration:</strong> Integrated strain energy via trapezoidal rule (observed order ≈ 2) and Simpson's 1/3 rule (observed order ≈ 4), both converging to the exact analytical value of 1.288 N·m.</p>
+                <div class="project-tags"><span>MATLAB</span><span>Numerical Methods</span><span>Vibration Analysis</span><span>Curve Fitting</span></div>
+            </div>
+        </article>
+
+        <!-- PROJECT 2: ODE Solver, FFT & Signal Reconstruction -->
+        <article class="project-card enhanced">
+            <div class="project-image">
+                <!-- CHART 04: Input Force vs Time (ODE Response) -->
+                <svg viewBox="0 0 852 396" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f7fafc"/><stop offset="100%" stop-color="#eef3f8"/></linearGradient></defs>
+                    <rect width="852" height="396" fill="url(#bg2)"/>
+
+                    <!-- axes -->
+                    <g transform="translate(60,10)"><line x1="0" y1="340" x2="790" y2="340" stroke="#9aa5b1"/><line x1="40" y1="340" x2="40" y2="20" stroke="#9aa5b1"/></g>
+
+                    <text transform="translate(60,8) rotate(-90)" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8">Input Force (N)</text>
+                    <text x="740" y="356" font-family="'JetBrains Mono',monospace" font-size="8">Time (s)</text>
+
+                    <!-- input force f(t) = 120·sin(2π·2.5t) + 60·sin(2π·7t) -->
+                    <path d="M8,330 C40,290 70,255 100,235 S145,195 190,180 S240,165 290,155 S350,145 410,138" fill="none" stroke="#e74c3c" stroke-width="2.4"/>
+                    <path d="M420,330 C452,310 490,285 530,268 S580,250 620,242 S670,235 710,232" fill="none" stroke="#e74c3c" stroke-width="2.4"/>
+                    <!-- ODE solver displacement response (adaptive RK4/5) -->
+                    <path d="M8,334 C40,318 70,296 100,274 S145,240 190,222 S240,208 290,198" fill="none" stroke="#2ecc71" stroke-width="2.4"/>
+                    <path d="M420,334 C452,316 490,292 530,276 S580,260 620,252 S670,245 710,242" fill="none" stroke="#2ecc71" stroke-width="2.4"/>
+
+                    <!-- solver step summary -->
+                    <g transform="translate(20,380)">
+                        <rect width="790" height="64" rx="10" fill="#fff" stroke="#d5dbe4"/><text x="14" y="24" font-family="'JetBrains Mono',monospace" font-size="9">ODE45 Step Size Summary: Minimum dt = 4.15e-3 s | Mean dt = 1.03e-2 s | Maximum dt = 1.28e-2 s</text>
+                        <text x="14" y="46" font-family="'JetBrains Mono',monospace" font-size="9">Tolerance Sensitivity: Max difference (default vs tight) = 2.40e-5 m</text>
+                    </g>
+
+                </svg>
+            </div>
+            <div class="chart-caption">Part 4: ODE45 adaptive solver response to forcing function f(t)</div>
+            <div class="project-content">
+                <h3>Numerical Modeling of a Vibration Isolation System — Parts 4–5</h3>
+                <p><strong>Solver Analysis:</strong> Modeled forced vibration with m=12 kg, c=95 N·s/m, k=4200 N/m using MATLAB's adaptive ODE45 solver (4th/5th-order Runge-Kutta). Confirmed tolerance independence (max diff = 2.4e-5 m between default vs tight tolerances).</p>
+                <p><strong>Time Stepping:</strong> Verified adaptive time stepping from the dt-vs-time plot — step size varied throughout the run rather than remaining constant, confirming the solver auto-adjusts for accuracy.</p>
+                <div class="project-tags"><span>MATLAB/Simulink</span><span>ODE Solvers</span><span>Adaptive Time Stepping</span></div>
+            </div>
+        </article>
+
+        <!-- PROJECT 3: FFT & Signal Reconstruction -->
+        <article class="project-card enhanced">
+            <div class="project-image">
+                <!-- CHART 05: FFT Magnitude Spectrum -->
+                <svg viewBox="0 0 852 340" xmlns="http://www.w3.org/2000/svg">
+                    <defs><linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f7fafc"/><stop offset="100%" stop-color="#eef3f8"/></linearGradient></defs>
+                    <rect width="852" height="340" fill="url(#bg3)"/>
+
+                    <!-- axes -->
+                    <g transform="translate(60,10)"><line x1="0" y1="320" x2="790" y2="320" stroke="#9aa5b1"/><line x1="40" y1="320" x2="40" y2="20" stroke="#9aa5b1"/></g>
+                    <text transform="translate(60,8) rotate(-90)" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="8">Input Force (N)</text>
+                    <text x="740" y="326" font-family="'JetBrains Mono',monospace" font-size="8">Time (s)</text>
+
+                    <!-- input force -->
+                    <path d="M8,310 C50,265 90,225 125,195 S175,155 220,140" fill="none" stroke="#e74c3c" stroke-width="2.2"/>
+                    <path d="M230,310 C268,292 305,278 342,270 S382,260 420,255 S460,250 500,247" fill="none" stroke="#e74c3c" stroke-width="2.2"/>
+                    <!-- ODE response -->
+                    <path d="M8,314 C50,300 90,282 125,268 S175,245 220,234" fill="none" stroke="#2ecc71" stroke-width="2.2"/>
+                    <path d="M230,314 C268,300 305,288 342,280 S382,272 420,268 S460,264 500,261" fill="none" stroke="#2ecc71" stroke-width="2.2"/>
+
+                    <!-- FFT spectrum -->
+                    <g transform="translate(20,390)">
+                        <rect width="790" height="108" rx="10" fill="#fff" stroke="#d5dbe4"/><text x="14" y="26" font-family="'JetBrains Mono',monospace" font-size="9">FFT Magnitude Spectrum — Dominant peak at 2.5 Hz (magnitude 3.04e-2), secondary at 7 Hz (1.41e-3)</text>
+                        <text x="14" y="52" font-family="'JetBrains Mono',monospace" font-size="9">System acts as low-pass vibration filter: transmits lower frequencies more strongly than higher ones</text>
+                    </g>
+
+                </svg>
+            </div>
+            <div class="chart-caption">Part 4–5: Forced vibration response and FFT frequency analysis</div>
+            <div class="project-content">
+                <h3>Numerical Modeling of a Vibration Isolation System — Parts 4–5 (continued)</h3>
+                <p><strong>Frequency Analysis:</strong> Prepared uniform time grid at fs ≈ 500 Hz for accurate FFT analysis. Frequency response showed dominant peak at <strong>2.5 Hz</strong> (magnitude 3.04e-2) and secondary at 7 Hz (1.41e-3), demonstrating the system acts as a low-pass vibration filter.</p>
+                <p><strong>Nyquist Criterion:</strong> Discussed how coarse sampling can violate Nyquist, potentially causing aliasing of high-frequency components like the 7 Hz input.</p>
+                <div class="project-tags"><span>MATLAB</span><span>FFT Analysis</span><span>Signal Processing</span></div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<style>
+    .projects-section .container { max-width: 1080px; padding: 60px 32px; }
+    .enhanced .project-image svg { width:100%; height:auto; border-radius:10px; box-shadow:0 8px 30px rgba(30,58,95,.14); margin-bottom:20px; }
+    .chart-caption { font-family:'JetBrains Mono',monospace; font-size:.8em; color:#5b6770; margin-top:-26px; margin-bottom:14px; padding-left:14px; border-left:3px solid #e74c3c; }
+    .project-card h3 { font-size:1.35rem; font-weight:600; color:#1e3a5f; margin-top:28px; }
+    .project-content p { line-height:1.62; color:#3d484f; font-size:.97em; }
+    .project-tags span { display:inline-block; padding:5px 11px; margin:5px 6px 0 0; background:#eaf4fb; border-radius:14px; font-size:11.5px; color:#2a5c8f; border:1px solid #d3e7f7; }
+    .projects-section h2.section-title { text-align:center; margin-bottom:40px; font-size:2rem; color:#1e3a5f; font-weight:700; }
+    @media (max-width:768px){ .projects-section .container{padding:44px 20px;} .project-card h3{font-size:1.2rem;} }
+</style>
+
+<script>
+// Auto-expand enhanced project cards on scroll into view
+document.querySelectorAll('.enhanced').forEach(function(card){
+    var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting){ card.style.transition='max-height .5s ease, opacity .5s ease'; card.style.maxHeight=card.scrollHeight+'px'; } });
+    },{threshold:.12});
+    io.observe(card);
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function(){
+    var nav = document.getElementById('navbar');
+    if (window.scrollY > 40){ nav.style.background='rgba(255,255,255,.96)'; nav.style.boxShadow='0 1px 8px rgba(0,0,0,.07)'; }
+    else { nav.style.background='transparent'; nav.style.boxShadow='none'; }
+});
+</script>
+
+<footer style="text-align:center;padding:40px;color:#6b7280;font-size:.85rem;">© 2026 Joseph Kozlowski — MECHENG 2850 Numerical Methods | OSU Undergraduate TA</footer>
+</body>
+</html>

@@ -3,451 +3,792 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joey Kozlowski | Mechanical Engineer & Agentic AI Developer</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+    <title>Joseph Kozlowski | Mechanical Engineering Portfolio</title>
+    <meta name="description" content="Portfolio of Joseph Kozlowski - Mechanical Engineering Student at The Ohio State University specializing in quality and testing with expertise in CAD, thermodynamics, system dynamics, and engineering analysis.">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <!-- Ohio State Theme Initialization -->
+    <script src="/js/osu-theme-init.js"></script>
 </head>
-<body>
+<body data-theme="light">
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">Joey K.</a>
-            <div class="nav-links">
-                <a href="#projects">Projects</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+            <a href="/" class="nav-brand">
+                <span class="brand-icon">⚙️</span>
+                <span class="brand-text">JK Portfolio</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link active">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#resume" class="nav-link">Resume</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="icon">🌙</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <canvas id="hero-canvas"></canvas>
-        <div class="hero-content">
-            <h1>Mechanical Engineering<br>& Agentic AI Development</h1>
-            <p>From concept to production. Physics-first design.<br>Autonomous systems for intelligent agents.</p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">View Featured Project</a>
-                <a href="mailto:kozlowski.109@osu.edu" class="btn btn-secondary">Get in Touch</a>
-            </div>
-        </div>
-    </section>
+    <header class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <div class="profile-placeholder">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="60" r="40" fill="#1e3a5f" opacity="0.1"/>
+                            <rect x="50" y="85" width="100" height="115" rx="20" fill="#fff"/>
+                            <ellipse cx="100" cy="155" rx="45" ry="30" fill="#1e3a5f" opacity="0.1"/>
+                        </svg>
+                    </div>
+                </div>
+                        <div class="hero-text">
+                            <h1 class="hero-title">Joseph Kozlowski</h1>
+                            <p class="hero-subtitle">Mechanical Engineering Student | Undergraduate Teaching Assistant</p>
+                            <p class="hero-intro">I am a Mechanical Engineering student at The Ohio State University with experience in quality and testing. Currently a TA in the OSU department of Mechanical and Aerospace Engineering.</p>
+                            <div class="hero-buttons">
+                                <a href="#projects" class="btn btn-primary">View Projects</a>
+                                <a href="#resume" class="btn btn-secondary">Download Resume</a>
+                                <a href="#contact" class="btn btn-outline">Contact Me</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </header>
 
-    <!-- FEATURED PROJECT SECTION - Takes 40% visual attention -->
-    <section id="featured-project" class="featured-project-section">
+                <!-- About Section -->
+    <section class="about-section" id="about">
         <div class="container">
-            <div class="project-badge">FLAGSHIP PROJECT</div>
-            <h2>ZERO TORQUE GOLF PUTTER</h2>
-            <p class="tagline">From Market Research to CNC Machined Product</p>
-            
-            <div class="featured-grid">
-                <!-- 3D Viewer -->
-                <div class="viewer-container">
-                    <div id="putter-viewer" class="viewer"></div>
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="bio-section">
+                    <h3>Biography</h3>
+                    <p>Joseph Kozlowski is a dedicated Mechanical Engineering student at The Ohio State University with a passion for quality and testing. His academic journey has been marked by hands-on experience in thermodynamics, system dynamics, kinematics, and machine design. As an Undergraduate Teaching Assistant in the Department of Mechanical and Aerospace Engineering, he actively supports fellow students while deepening his understanding of core engineering principles.</p>
+                    <p>Beyond the classroom, Joseph brings curiosity and creativity to every project—from designing custom golf putters with precision physics-based engineering to building Arduino prototypes that demonstrate practical control systems applications. His work reflects a commitment to excellence in both analytical thinking and hands-on implementation.</p>
                 </div>
-                
-                <div class="project-overview">
-                    <h3>The Challenge</h3>
-                    <p>Traditional putters suffer from face rotation and inconsistent alignment during stroke. Zero torque designs eliminate unwanted torsion for improved accuracy.</p>
-                    
-                    <a href="putter-report.pdf" class="btn btn-outline btn-small">📄 Download Full IEEE Report</a>
-                    
-                    <div class="metrics-grid">
-                        <div class="metric-card">
-                            <span class="metric-icon">⚖️</span>
-                            <span class="metric-value">5000+ g·cm²</span>
-                            <span class="metric-label">MOI (Moment of Inertia)</span>
-                        </div>
-                        <div class="metric-card">
-                            <span class="metric-icon">🎯</span>
-                            <span class="metric-value">±0.5°</span>
-                            <span class="metric-label">Torsional Stability</span>
-                        </div>
-                        <div class="metric-card">
-                            <span class="metric-icon">⚡</span>
-                            <span class="metric-value">COR 0.65±0.5</span>
-                            <span class="metric-label">Coefficient of Restitution</span>
-                        </div>
-                        <div class="metric-card">
-                            <span class="metric-icon">📐</span>
-                            <span class="metric-value">3.5°</span>
-                            <span class="metric-label">Static Loft (Target)</span>
-                        </div>
-                    </div>
-
-                    <a href="case-study.html" class="btn btn-primary btn-large">View Complete Case Study →</a>
-                </div>
-            </div>
-
-            <div class="project-timeline">
-                <h3>Engineering Timeline</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <span class="timeline-phase">0-2 Months</span>
-                            <span class="timeline-title">Market Research & Competitive Analysis</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <span class="timeline-phase">2-4 Months</span>
-                            <span class="timeline-title">CAD Development (Onshape)</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <span class="timeline-phase">4-5 Months</span>
-                            <span class="timeline-title">Design for Manufacturing</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <div class="timeline-content">
-                            <span class="timeline-phase">5-6 Months</span>
-                            <span class="timeline-title">CNC Production & Quality Testing</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Image Gallery with Actual Images -->
-            <div class="image-gallery-section">
-                <h3>Project Gallery</h3>
-                
-                <div class="gallery-grid">
-                    <div class="gallery-item large">
-                        <img src="images/cad-render-isometric.png" alt="CAD Isometric View - Zero Torque Putter Design">
-                        <p class="image-caption">Isometric CAD Model - Onshape Design Environment</p>
-                    </div>
-
-                    <div class="gallery-item large">
-                        <img src="images/engineering-drawings-with-gdnt.png" alt="GD&T Engineering Drawings with Tolerances">
-                        <p class="image-caption">Engineering Drawings with GD&T Callouts</p>
-                    </div>
-
-                    <div class="gallery-item large">
-                        <img src="images/finished-putter-black-anodized.jpg" alt="Machined Zero Torque Golf Putter - Finished Product">
-                        <p class="image-caption">CNC Machined & Black Anodized - Final Production Part</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Technical Specifications from IEEE Report -->
-    <section class="technical-specs-section">
-        <div class="container">
-            <h2>Technical Specifications (IEEE Report)</h2>
-            
-            <div class="specs-grid">
-                <div class="spec-card">
-                    <h3>📋 Design Specification</h3>
-                    <table>
-                        <tr><th>Parameter</th><th>Target Specification</th><th>Rationale</th></tr>
-                        <tr><td>Head Type</td><td>High-MOI Mallet; I ≥ 5000 g·cm²</td><td>Forgiveness is non-negotiable</td></tr>
-                        <tr><td>Face Technology</td><td>Slow Milled Aluminum Finish</td><td>Good feel → predictable distance control</td></tr>
-                        <tr><td>Center of Gravity</td><td>Slightly behind club face</td><td>Zero torque for square ball strikes</td></tr>
-                        <tr><td>Static Loft</td><td>3.5°</td><td>Consistent dynamic loft (standard angle)</td></tr>
-                        <tr><td>Coefficient of Restitution</td><td>0.65 ± 0.5</td><td>Energy transfer consistency</td></tr>
-                        <tr><td>Initial Topspin</td><td>≥ 15 rad/s</td><td>Skid-roll transition optimization</td></tr>
-                        <tr><td>Shaft</td><td>34 in.</td><td>Comfortable for the player's putting stroke</td></tr>
-                        <tr><td>Grip</td><td>Straight Grip</td><td>Common putter feature</td></tr>
-                    </table>
-                </div>
-                
-                <div class="spec-card">
-                    <h3>🧮 Physics Foundations</h3>
-                    <div class="physics-equations">
-                        <div class="equation">
-                            <span class="equation-label">Moment of Inertia (Eq. 1)</span>
-                            <span class="equation-math">I = Σ(mᵢ × rᵢ²)</span>
-                            <p class="equation-note">Higher MOI reduces rotational penalty on off-center hits</p>
-                        </div>
-                        <div class="equation">
-                            <span class="equation-label">Dynamic Loft (Eq. 2)</span>
-                            <span class="equation-math">θ_dynamic = θ_static + Δθ_deflection</span>
-                            <p class="equation-note">Minimizing dynamic loft variation reduces three-putt frequency</p>
-                        </div>
-                        <div class="equation">
-                            <span class="equation-label">Gravitational Torque (Eq. 3)</span>
-                            <span class="equation-math">τ_gravity = m × g × r_CG × sin(φ)</span>
-                            <p class="equation-note">Optimizing initial backspin shortens skid-roll transition</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="materials-section">
-                <h3>🔬 Materials & Manufacturing</h3>
-                <div class="materials-grid">
-                    <div class="material-card">
-                        <h4>Club Head</h4>
-                        <p><strong>Material:</strong> 6061 Aluminum (Industry Standard)</p>
-                        <p><strong>Rationale:</strong> Balance of cost efficiency and machinability. Provides exceptional feel while striking the ball.</p>
-                        <p><strong>Tolerance:</strong> ±0.005 in precision machining</p>
-                    </div>
-                    <div class="material-card">
-                        <h4>Weighting System</h4>
-                        <p><strong>Material:</strong> 304 Stainless Steel</p>
-                        <p><strong>Rationale:</strong> Corrosion resistance for outdoor exposure. Originally 303 considered, but 304 provides better weather protection.</p>
-                        <p><strong>Implementation:</strong> Distributed to club perimeter to maximize MOI</p>
-                    </div>
-                    <div class="material-card">
-                        <h4>Surface Finish</h4>
-                        <p><strong>Roughness:</strong> 125 µin (2.3 µm) Ra minimum</p>
-                        <p><strong>Treatment:</strong> Black Anodize coating</p>
-                        <p><strong>Edge Treatment:</strong> All sharp edges broken, burrs removed</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="zero-torque-explanation">
-                <h3>⚡ What is Zero Torque Design?</h3>
-                <p>The Zero Torque design is balanced in all directions around the shaft. When the putter is balanced on the shaft regardless of orientation, it will not self-correct because one side of the club always has the same weight as the opposite side. This design ensures that:</p>
-                <ul>
-                    <li><strong>The shaft intersects with the center of gravity</strong> — critical for eliminating unwanted rotation</li>
-                    <li><strong>Center-shafted placement</strong> provides maximum comfort and accuracy (validated at Golf Galaxy)</li>
-                    <li><strong>Symmetrical weight distribution</strong> eliminates torque-induced face rotation during stroke</li>
-                </ul>
-            </div>
-            
-            <a href="putter-report.pdf" class="btn btn-primary">📄 View Full IEEE Report (9 Pages)</a>
-        </div>
-    </section>
-    
-    <!-- Lazy Man Alarm Snoozer Detail Section -->
-    <section id="snoozer-detail" class="snoozer-detail-section">
-        <div class="container">
-            <div class="project-badge">PROJECT HIGHLIGHT</div>
-            <h2>The Lazy Man Alarm Snoozer</h2>
-            <p class="tagline">ME 2900 Arduino Prototype Project · The Ohio State University</p>
-
-            <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap:3rem; margin-top:2rem;">
-                <div>
-                    <!-- Note: Poster image not rendered due to missing PDF/image libraries. 
-                         Original poster from ME 2900 Arduino Prototype Report is available at source PDFs. -->
-                    <svg viewBox="0 0 600 450" style="width:100%; height:auto; border-radius:16px; box-shadow:var(--shadow-md); background:#1a1d23;" role="img" aria-label="ME 2900 Arduino Prototype Report Poster">
-                        <!-- SVG placeholder for the poster -->
-                        <defs>
-                            <linearGradient id="posterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#2a3449"/>
-                                <stop offset="100%" stop-color="#1a1d23"/>
-                            </linearGradient>
-                            <filter id="textGlow">
-                                <feGaussianBlur stdDeviation="2.5" result="blur"/>
-                                <feMerge>
-                                    <feMergeNode in="blur"/>
-                                    <feMergeNode in="SourceGraphic"/>
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        
-                        <!-- Background -->
-                        <rect width="600" height="450" fill="url(#posterGrad)"/>
-                        
-                        <!-- Header bar -->
-                        <rect x="30" y="30" width="540" height="70" rx="8" fill="#e11d48" opacity="0.92"/>
-                        <text x="300" y="66" text-anchor="middle" font-family="'Courier New',monospace" font-size="20" fill="#ffffff" filter="url(#textGlow)">ME 2900 Arduino Prototype</text>
-                        
-                        <!-- Main title -->
-                        <text x="300" y="150" text-anchor="middle" font-family="'Courier New',monospace" font-size="46" fill="#fbbf24" filter="url(#textGlow)">The Lazy Man</text>
-                        <text x="300" y="200" text-anchor="middle" font-family="'Courier New',monospace" font-size="46" fill="#fbbf24" filter="url(#textGlow)">Alarm Snoozer</text>
-                        
-                        <!-- Subtitle -->
-                        <text x="300" y="250" text-anchor="middle" font-family="'Courier New',monospace" font-size="18" fill="#9ca3af">IR Remote · Servo Motor · Arduino Mega · Sound Detection</text>
-                        
-                        <!-- Feature icons row -->
-                        <g transform="translate(150,290)" text-anchor="middle" font-family="'Courier New',monospace">
-                            <circle cx="-60" cy="0" r="34" fill="#e11d48"/>
-                            <text x="-60" y="5" font-size="26">📡</text>
-                            <text x="-60" dy="42" font-size="15">IR Remote</text>
-                            
-                            <circle cx="0" cy="0" r="34" fill="#fbbf24"/>
-                            <text x="0" y="5" font-size="26">🤖</text>
-                            <text x="0" dy="42" font-size="15">Servo Arm</text>
-                            
-                            <circle cx="60" cy="0" r="34" fill="#f97316"/>
-                            <text x="60" y="5" font-size="26">🔊</text>
-                            <text x="60" dy="42" font-size="15">Sound Sensor</text>
-                        </g>
-                        
-                        <!-- Footer -->
-                        <rect x="30" y="400" width="540" height="28" rx="6" fill="#eab308" opacity="0.9"/>
-                        <text x="300" y="417" text-anchor="middle" font-family="'Courier New',monospace" font-size="13" fill="#ffffff">The Ohio State University · ME 2900</text>
-                    </svg>
-                </div>
-
-                <div class="snoozer-content">
-                    <h3>The Problem</h3>
-                    <p>Waking up on a Monday morning to the sound of a blaring alarm is unpleasant — and turning it off requires physical movement out of bed, which is difficult for people with mobility issues or simply those who don't want to move. The goal was simple: turn off an alarm without leaving your bed.</p>
-
-                    <h3>The Solution</h3>
-                    <p>An infrared remote and servo motor drive a robotic arm that presses the power button on your phone, silencing the alarm from across the room. A sound sensor confirms an actual alarm is ringing before actuating — preventing false triggers from ambient noise.</p>
-
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.5rem;">
-                        <div class="feature-box">
-                            <span class="feature-icon">📡</span>
-                            <h4>Infrared Remote (NEC)</h4>
-                            <p style="font-size:.85rem; color:var(--text-secondary);">Wireless wake trigger; reads NEC protocol command codes. Only 1 digital pin required on the Arduino.</p>
-                        </div>
-                        <div class="feature-box">
-                            <span class="feature-icon">🤖</span>
-                            <h4>Servo Motor (Digital Pin 9)</h4>
-                            <p style="font-size:.85rem; color:var(--text-secondary);">Rotates arm 135° to reliably contact and press the phone's power button.</p>
-                        </div>
-                        <div class="feature-box">
-                            <span class="feature-icon">🔊</span>
-                            <h4>Sound Sensor Module</h4>
-                            <p style="font-size:.85rem; color:var(--text-secondary);">Analog threshold detection (>75% analog value) confirms a real alarm is ringing.</p>
-                        </div>
-                        <div class="feature-box">
-                            <span class="feature-icon">💡</span>
-                            <h4>Yellow LED (Pin 3)</h4>
-                            <p style="font-size:.85rem; color:var(--text-secondary);">Visual confirmation that the sound sensor is active and monitoring.</p>
-                        </div>
-                    </div>
-
-                    <h3 style="margin-top:1.75rem;">How It Works</h3>
-                    <ol style="padding-left:1.25rem; color:var(--text-secondary); line-height:1.8;">
-                        <li><strong>I wake the device:</strong> Press any button on the IR remote — the receiver (NEC protocol, pin 2) signals the Arduino to enable the system.</li>
-                        <li><strong>The alarm sounds:</strong> The sound sensor picks up audio frequencies near the phone's speaker. Analog values are mapped to a 0–100% percentage scale; above ~75% indicates an active alarm.</li>
-                        <li><strong>The arm actuates:</strong> When the threshold is exceeded, the servo motor sweeps from 0° → 135° at 25ms intervals (smooth motion), then returns — pressing the phone's power button to silence it.</li>
-                        <li><strong>Status feedback:</strong> The yellow LED confirms sound-sensor activation, and the LCD displays messages like "Good Night, Sleep Tight!" via a shift register (reducing MCU pin usage).</li>
-                    </ol>
-
-                    <h3 style="margin-top:1.75rem;">Engineering Notes & Challenges</h3>
-                    <p><strong>Servo jitter fix:</strong> The servo initially jitted due to redundant setup commands in the sketch (manually setting pinMode OUTPUT + digitalWrite). The <code>Servo.h</code> library handles initialization automatically — removing those lines eliminated the issue.</p>
-                    <p style="margin-top:.75rem;"><strong>Baud rate:</strong> Serial communication runs at 115200 baud to accommodate the IR remote's NEC decoder.</p>
-                    <p style="margin-top:.75rem;"><strong>Servicing threshold calibration:</strong> The sound sensor's optimal threshold was user-calibrated against multiple alarm sounds; ~7% of full capacity reliably triggers actuation without false positives from room tone.</p>
-
-                    <a href="#contact" class="btn btn-primary" style="margin-top:2rem;">✎ Discuss This Project</a>
+                <div class="mission-section">
+                    <h3>Career Interests</h3>
+                    <p><strong>Engineering Specialties:</strong> Thermodynamics, System Dynamics, Kinematics and Mechanism Design, Machine Design, Machining, Microcontrollers (Arduino IDE)</p>
+                    <p><strong>Professional Mission:</strong> To develop innovative mechanical systems that solve real-world problems while maintaining the highest standards of engineering quality and technical excellence.</p>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Additional Projects -->
-    <section id="projects" class="projects-section">
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
         <div class="container">
-            <h2>Engineering Portfolio</h2>
-            
-            <div class="project-grid">
-                <!-- Autonomous Trading System -->
-                <article class="project-card featured">
-                    <div class="project-header">
-                        · · · <span class="project-tag">Agentic AI Systems</span>
-                        <span class="featured-badge">Featured</span>
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid enhanced-grid">
+                <!-- Vibration Isolation Project with Charts -->
+                <article class="project-card enhanced" data-chart-id="01,02,03">
+                    <div class="project-image">
+                        <svg viewBox="0 0 420 280" width="100%" height="220">
+                            <defs>
+                                <linearGradient id="p1bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#eef4fb"/><stop offset="100%" stop-color="#dbe7f5"/></linearGradient>
+                            </defs>
+                            <rect width="420" height="280" fill="url(#p1bg)"/>
+                            <!-- Chart 1: Force-Displacement -->
+                            <g transform="translate(30,20)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 1 — Force vs Displacement (Raw Data + Model Fit)</text>
+                                <line x1="40" y1="150" x2="360" y2="150" stroke="#b0bec5"/>
+                                <path d="M40,140 C80,130 120,95 150,70 S210,45 340,30" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                                <g>
+                                    <circle cx="60" cy="128" r="2.5" fill="#34495e"/><circle cx="110" cy="110" r="2.5" fill="#34495e"/>
+                                    <circle cx="160" cy="85" r="2.5" fill="#34495e"/><circle cx="210" cy="65" r="2.5" fill="#34495e"/>
+                                    <circle cx="270" cy="50" r="2.5" fill="#34495e"/><circle cx="330" cy="38" r="2.5" fill="#34495e"/>
+                                </g>
+                            </g>
+                            <!-- Chart 2 & 3: Local Stiffness + Error -->
+                            <g transform="translate(180,60)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 2 — Local Stiffness (k) vs Displacement for Grid Densities</text>
+                                <line x1="40" y1="130" x2="250" y2="130" stroke="#b0bec5"/>
+                                <!-- Smooth stiffness curves rising at right boundary -->
+                                <path d="M40,128 C70,126 90,124 100,120 S230,110 245,100" fill="none" stroke="#2ecc71" stroke-width="1.5"/>
+                                <path d="M40,127 C68,125 92,123 102,120 S232,110 247,99" fill="none" stroke="#f39c12" stroke-width="1.5"/>
+                            </g>
+                            <!-- Chart 3: Error convergence -->
+                            <g transform="translate(180,160)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 3 — L2 Error vs Grid Spacing (slope ≈ 2 → O(h²))</text>
+                                <line x1="40" y1="70" x2="250" y2="70" stroke="#b0bec5"/>
+                                <line x1="40" y1="30" x2="250" y2="30" stroke="#b0bec5"/>
+                                <path d="M40,68 C70,55 100,42 130,35 S190,28 245,22" fill="none" stroke="#e67e22" stroke-width="1.8"/>
+                            </g>
+                            <text x="24" y="252" font-family="monospace" font-size="8">Part 1–3: Curve fitting, numerical differentiation, integration</text>
+                        </svg>
                     </div>
-                    · · · <h3>Autonomous Market Making Agent</h3>
-                                        <p>AI-driven market making with sub-millisecond decision loops. Reinforcement learning for adaptive strategy optimization.</p>
-                    <div class="project-stats">
-                        <span>Python/C++</span>
-                        <span>Multi-exchange</span>
-                        <span>15% Sharpe</span>
+                    <div class="project-content">
+                        <h3>Numerical Modeling of a Vibration Isolation System (Parts 1–3)</h3>
+                        <p><strong>Fitting &amp; Differentiation:</strong> Fitted force-displacement data to both a third-order polynomial and a physics-guided nonlinear model. The physics model (SSE = 1687.9) fit better than the polynomial (SSE = 1716.6). Computed numerical derivatives using second-order central differences; verified O(h²) convergence with L2 error slope ≈ 2. Also integrated strain energy via trapezoidal (order ~2) and Simpson's rules (order ~4, converging to 1.288 N·m).</p>
+                        <div class="project-tags"><span>MATLAB</span><span>Numerical Methods</span><span>Vibration Analysis</span><span>Curve Fitting</span></div>
                     </div>
-                    <a href="#" class="btn btn-outline">Learn More →</a>
-                </article>                <!-- Lazy Man Alarm Snoozer -->
-                <article class="project-card featured" style="border-left:4px solid var(--accent);">
-                    <div class="project-header">
-                        · · · <span class="project-tag">Arduino / Mechatronics</span>
-                        <span class="featured-badge" style="background:#e11d48; color:#fff;">Project Highlight</span>
-                    </div>
-                    · · · <h3>Remote-Controlled Alarm Snoozer</h3>
-                                        <p>An IR remote-triggered robotic arm that silently snoozes phone alarms without requiring the user to leave bed — perfect for sleepers with mobility constraints. Sound-sensing, LCD status display, and LED indicator complete the prototype.</p>
-                    <div class="project-stats">
-                        <span>Arduino / Servo</span>
-                        <span>IR Remote</span>
-                        <span>Sound Sensor</span>
-                        <span>LCD 74HC595</span>
-                    </div>
-                    <a href="#snoozer-detail" class="btn btn-outline">Learn More →</a>
                 </article>
 
+                <!-- ODE Solver, FFT & Signal Reconstruction -->
+                <article class="project-card enhanced" data-chart-id="04,05,06">
+                    <div class="project-image">
+                        <svg viewBox="0 0 420 280" width="100%" height="220">
+                            <defs>
+                                <linearGradient id="p2bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#eef4fb"/><stop offset="100%" stop-color="#dbe7f5"/></linearGradient>
+                            </defs>
+                            <rect width="420" height="280" fill="url(#p2bg)"/>
+                            <!-- Chart 4: ODE Response -->
+                            <g transform="translate(30,16)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 4 — Input Force vs Time (ODE Solver Response)</text>
+                                <line x1="40" y1="150" x2="360" y2="150" stroke="#b0bec5"/>
+                                <path d="M40,148 C70,140 90,120 100,118 S130,105 160,100 S190,88 220,82" fill="none" stroke="#e74c3c" stroke-width="1.6"/>
+                                <path d="M40,145 C70,142 100,130 130,120 S170,108 210,98" fill="none" stroke="#2ecc71" stroke-width="1.6" stroke-dasharray="5,3"/>
+                            </g>
+                            <!-- Chart 5: FFT Spectrum -->
+                            <g transform="translate(30,90)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 5 — FFT Magnitude Spectrum (N=256/512/1024)</text>
+                                <line x1="40" y1="70" x2="360" y2="70" stroke="#b0bec5"/>
+                                <!-- Peaks at 2.5 Hz and 7 Hz -->
+                                <path d="M50,68 C55,62 60,52 64,46 S70,38 76,35" fill="none" stroke="#2980b9" stroke-width="1.6"/>
+                                <path d="M150,68 C158,55 168,42 180,32 S200,25 220,24" fill="none" stroke="#e74c3c" stroke-width="1.6"/>
+                                <text x="40" y="96" font-family="monospace" font-size="7">2.5 Hz peak (dominant)</text>
+                            </g>
+                            <!-- Chart 6: Reconstruction -->
+                            <g transform="translate(30,160)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 6 — Signal Reconstruction vs Original (N=256/512/1024)</text>
+                                <line x1="40" y1="70" x2="360" y2="70" stroke="#b0bec5"/>
+                                <path d="M40,68 C90,55 140,45 190,40 S250,35 310,32" fill="none" stroke="#34495e" stroke-width="1.5"/>
+                                <path d="M40,67 C90,54 140,44 190,39 S250,34 310,31" fill="none" stroke="#f39c12" stroke-width="1.8" stroke-dasharray="5,3"/>
+                            </g>
+                            <text x="24" y="256" font-family="monospace" font-size="8">Part 4–5: ODE solver, adaptive time stepping, FFT, reconstruction</text>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Numerical Modeling of a Vibration Isolation System (Parts 4–5)</h3>
+                        <p><strong>Solver &amp; Frequency Analysis:</strong> Modeled forced vibration using MATLAB's adaptive ODE45 solver (min dt = 4.15e-3 s, mean = 1.03e-2 s). Confirmed tolerance independence (max diff = 2.4e-5 m) and prepared uniform time grid for FFT at fs ≈ 500 Hz. Frequency response showed a dominant peak at <strong>2.5 Hz</strong> (magnitude 3.04e-2) and secondary at 7 Hz (1.41e-3), demonstrating the system acts as a low-pass vibration filter.</p>
+                        <div class="project-tags"><span>MATLAB/Simulink</span><span>ODE Solvers</span><span>FFT Analysis</span><span>Sampling Theory</span></div>
+                    </div>
+                </article>
 
+                <!-- Zero Torque Putter Project - Enhanced with Real IEEE Specs -->
+                <article class="project-card enhanced flagship-project">
+                    <div class="project-badge" style="background: linear-gradient(135deg, #BB0007 0%, #8B0007 100%); padding: 0.5rem 1rem; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/><text x="12" y="16" text-anchor="middle" fill="white" font-size="10" font-family="monospace">ZT</text></svg>
+                        <span style="color: white; font-size: 0.85rem; font-weight: 600;">FLAGSHIP PROJECT</span>
+                    </div>
+                    
+                    <div class="project-image">
+                        <svg viewBox="0 0 420 280" width="100%" height="230">
+                            <defs>
+                                <linearGradient id="putter-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#e8f4f8"/>
+                                    <stop offset="100%" style="stop-color:#dbe7f5"/>
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Putter Head -->
+                            <g transform="translate(60, 30) scale(0.9)">
+                                <path d="M50 120 L50 180 L180 210 L300 170 L290 120 L160 90" 
+                                      fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+                                <!-- Weight Ports -->
+                                <circle cx="85" cy="175" r="15" fill="#6b7280"/>
+                                <circle cx="300" cy="140" r="15" fill="#6b7280"/>
+                                
+                                <!-- Face Grooves -->
+                                <path d="M90 145 L280 145 M95 155 L285 155 M100 165 L290 165" 
+                                      stroke="#b0b0b0" stroke-width="3" opacity="0.7"/>
+                                
+                                <!-- Zero Torque Badge -->
+                                <circle cx="250" cy="145" r="30" fill="#BB0007" opacity="0.95"/>
+                                <text x="250" y="152" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial, sans-serif">ZT</text>
+                                
+                                <!-- Shaft -->
+                                <rect x="160" y="90" width="25" height="110" fill="#1e3a5f"/>
+                            </g>
+                            
+                            <!-- Specs Callout -->
+                            <g transform="translate(280, 45)">
+                                <rect x="0" y="0" width="110" height="170" rx="8" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+                                
+                                <!-- MOI -->
+                                <text x="10" y="35" font-size="9" font-family="monospace">MOI:</text>
+                                <text x="10" y="48" font-size="18" fill="#BB0007" font-weight="bold">≥5,000 g·cm²</text>
+                                
+                                <!-- Torsional -->
+                                <text x="10" y="72" font-size="9">Torsional Stability:</text>
+                                <text x="10" y="85" font-size="13" fill="#495057">Zero Torque Design</text>
+                                
+                                <!-- COR -->
+                                <text x="10" y="102" font-size="9">COR:</text>
+                                <text x="10" y="115" font-size="13" fill="#495057">0.65 ± 0.02</text>
+                                
+                                <!-- Static Loft -->
+                                <text x="10" y="132" font-size="9">Static Loft:</text>
+                                <text x="10" y="145" font-size="13" fill="#495057">3.5° ± 0.5°</text>
+                                
+                                <!-- CG -->
+                                <text x="10" y="162" font-size="9">CG Position:</text>
+                                <text x="10" y="175" font-size="12" fill="#495057">Rear/Low Optimized</text>
+                            </g>
+                        </svg>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h3 style="margin: 0; line-height: 1.4;">ZERO TORQUE GOLF PUTTER</h3>
+                        <p style="font-size: 0.95rem; margin-top: 0.75rem;">From Market Research to CNC Machined Product — <strong>Traditional putters suffer from face rotation and inconsistent alignment during stroke.</strong> The Zero Torque design eliminates this through physics-first engineering with milled face for consistent COR and adjustable toe hang (20°) via weight ports.</p>
+                        
+                        <!-- Real IEEE Verified Specs -->
+                        <div class="specs-grid verified">
+                            <div class="spec-item verified">
+                                <strong>MOI:</strong> 
+                                <span class="spec-value" style="color: #BB0007; font-weight: 600;">≥5,000 g·cm²</span>
+                            </div>
+                            <div class="spec-item verified">
+                                <strong>Torsional Stability:</strong> 
+                                <span class="spec-value" style="color: #2ecc71;">Zero Torque</span>
+                            </div>
+                            <div class="spec-item verified">
+                                <strong>COR Uniformity:</strong> 
+                                <span class="spec-value">0.65 ± 0.02</span>
+                            </div>
+                            <div class="spec-item verified">
+                                <strong>Static Loft:</strong> 
+                                <span class="spec-value">3.5° ± 0.5°</span>
+                            </div>
+                        </div>
 
-                <!-- Other projects can be added here -->
+                        <!-- Manufacturing Process Timeline -->
+                        <div class="timeline-mini vertical">
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-step" style="--i:1">Market Research & Design</span>
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-step" style="--i:2">CAD (Onshape)</span>
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-step" style="--i:3">DFM Analysis</span>
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-step" style="--i:4">CNC Machining</span>
+                            <span class="timeline-dot"></span>
+                            <span class="timeline-step" style="--i:5">3D Print Validation</span>
+                        </div>
+
+                        <!-- Verified Material Badges -->
+                        <div class="verified-materials verified">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 6" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#2ecc71" stroke-width="2"/></svg>
+                            <span>Certified Materials: 6061 Aluminum, 304 Stainless Steel</span>
+                        </div>
+                        <div class="verified-materials verified">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 6" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#2ecc71" stroke-width="2"/></svg>
+                            <span>GD&T Compliant Manufacturing</span>
+                        </div>
+
+                        <div class="project-tags">
+                            <span>Fusion 360</span>
+                            <span>CNC Machining</span>
+                            <span>Physics-Based Design</span>
+                            <span>Black Anodize</span>
+                            <span>IEEE Report</span>
+                        </div>
+
+                        <a href="pages/zero-torque-putter.html" class="btn btn-primary">View Full Case Study →</a>
+                    </div>
+                </article>
+
+                <!-- Vibration Isolation System Project -->
+                <article class="project-card enhanced" data-chart-id="01,02,03">
+                    <div class="project-image">
+                        <svg viewBox="0 0 420 280" width="100%" height="220">
+                            <defs>
+                                <linearGradient id="p1bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#eef4fb"/><stop offset="100%" stop-color="#dbe7f5"/></linearGradient>
+                            </defs>
+                            <rect width="420" height="280" fill="url(#p1bg)"/>
+                            <!-- Chart 1: Force-Displacement -->
+                            <g transform="translate(30,20)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 1 — Force vs Displacement (Raw Data + Model Fit)</text>
+                                <line x1="40" y1="150" x2="360" y2="150" stroke="#b0bec5"/>
+                                <path d="M40,140 C80,130 120,95 150,70 S210,45 340,30" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                                <g>
+                                    <circle cx="60" cy="128" r="2.5" fill="#34495e"/><circle cx="110" cy="110" r="2.5" fill="#34495e"/>
+                                    <circle cx="160" cy="85" r="2.5" fill="#34495e"/><circle cx="210" cy="65" r="2.5" fill="#34495e"/>
+                                    <circle cx="270" cy="50" r="2.5" fill="#34495e"/><circle cx="330" cy="38" r="2.5" fill="#34495e"/>
+                                </g>
+                            </g>
+                            <!-- Chart 2 & 3: Local Stiffness + Error -->
+                            <g transform="translate(180,60)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 2 — Local Stiffness (k) vs Displacement</text>
+                                <line x1="40" y1="130" x2="250" y2="130" stroke="#b0bec5"/>
+                                <path d="M40,128 C70,126 90,124 100,120 S230,110 245,100" fill="none" stroke="#2ecc71" stroke-width="1.5"/>
+                                <path d="M40,127 C68,125 92,123 102,120 S232,110 247,99" fill="none" stroke="#f39c12" stroke-width="1.5"/>
+                            </g>
+                            <!-- Chart 3: Error convergence -->
+                            <g transform="translate(180,160)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 3 — L2 Error vs Grid Spacing (slope ≈ 2 → O(h²))</text>
+                                <line x1="40" y1="70" x2="250" y2="70" stroke="#b0bec5"/>
+                                <line x1="40" y1="30" x2="250" y2="30" stroke="#b0bec5"/>
+                                <path d="M40,68 C70,55 100,42 130,35 S190,28 245,22" fill="none" stroke="#e67e22" stroke-width="1.8"/>
+                            </g>
+                            <text x="24" y="252" font-family="monospace" font-size="8">Part 1–3: Curve fitting, numerical differentiation, integration</text>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Numerical Modeling of Vibration Isolation System (Parts 1–3)</h3>
+                        <p><strong>Fitting &amp; Differentiation:</strong> Fitted force-displacement data to both a third-order polynomial and a physics-guided nonlinear model. The physics model (SSE = 1687.9) fit better than the polynomial (SSE = 1716.6). Computed numerical derivatives using second-order central differences; verified O(h²) convergence with L2 error slope ≈ 2. Also integrated strain energy via trapezoidal (order ~2) and Simpson's rules (order ~4, converging to 1.288 N·m).</p>
+                        <div class="project-tags"><span>MATLAB</span><span>Numerical Methods</span><span>Vibration Analysis</span><span>Curve Fitting</span></div>
+                    </div>
+                </article>
+
+                <!-- ODE Solver, FFT & Signal Reconstruction -->
+                <article class="project-card enhanced" data-chart-id="04,05,06">
+                    <div class="project-image">
+                        <svg viewBox="0 0 420 280" width="100%" height="220">
+                            <defs>
+                                <linearGradient id="p2bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#eef4fb"/><stop offset="100%" stop-color="#dbe7f5"/></linearGradient>
+                            </defs>
+                            <rect width="420" height="280" fill="url(#p2bg)"/>
+                            <!-- Chart 4: ODE Response -->
+                            <g transform="translate(30,16)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 4 — Input Force vs Time (ODE Solver Response)</text>
+                                <line x1="40" y1="150" x2="360" y2="150" stroke="#b0bec5"/>
+                                <path d="M40,148 C70,140 90,120 100,118 S130,105 160,100 S190,88 220,82" fill="none" stroke="#e74c3c" stroke-width="1.6"/>
+                                <path d="M40,145 C70,142 100,130 130,120 S170,108 210,98" fill="none" stroke="#2ecc71" stroke-width="1.6" stroke-dasharray="5,3"/>
+                            </g>
+                            <!-- Chart 5: FFT Spectrum -->
+                            <g transform="translate(30,90)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 5 — FFT Magnitude Spectrum (N=256/512/1024)</text>
+                                <line x1="40" y1="70" x2="360" y2="70" stroke="#b0bec5"/>
+                                <!-- Peaks at 2.5 Hz and 7 Hz -->
+                                <path d="M50,68 C55,62 60,52 64,46 S70,38 76,35" fill="none" stroke="#2980b9" stroke-width="1.6"/>
+                                <path d="M150,68 C158,55 168,42 180,32 S200,25 220,24" fill="none" stroke="#e74c3c" stroke-width="1.6"/>
+                                <text x="40" y="96" font-family="monospace" font-size="7">2.5 Hz peak (dominant)</text>
+                            </g>
+                            <!-- Chart 6: Reconstruction -->
+                            <g transform="translate(30,160)">
+                                <text x="0" y="-8" font-family="monospace" font-size="9">FIG 6 — Signal Reconstruction vs Original (N=256/512/1024)</text>
+                                <line x1="40" y1="70" x2="360" y2="70" stroke="#b0bec5"/>
+                                <path d="M40,68 C90,55 140,45 190,40 S250,35 310,32" fill="none" stroke="#34495e" stroke-width="1.5"/>
+                                <path d="M40,67 C90,54 140,44 190,39 S250,34 310,31" fill="none" stroke="#f39c12" stroke-width="1.8" stroke-dasharray="5,3"/>
+                            </g>
+                            <text x="24" y="256" font-family="monospace" font-size="8">Part 4–5: ODE solver, adaptive time stepping, FFT, reconstruction</text>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Numerical Modeling of Vibration Isolation System (Parts 4–5)</h3>
+                        <p><strong>Solver &amp; Frequency Analysis:</strong> Modeled forced vibration using MATLAB's adaptive ODE45 solver (min dt = 4.15e-3 s, mean = 1.03e-2 s). Confirmed tolerance independence (max diff = 2.4e-5 m) and prepared uniform time grid for FFT at fs ≈ 500 Hz. Frequency response showed a dominant peak at <strong>2.5 Hz</strong> (magnitude 3.04e-2) and secondary at 7 Hz (1.41e-3), demonstrating the system acts as a low-pass vibration filter.</p>
+                        <div class="project-tags"><span>MATLAB/Simulink</span><span>ODE Solvers</span><span>FFT Analysis</span><span>Sampling Theory</span></div>
+                    </div>
+                </article>
+
+                <!-- Arduino Prototype Project -->
+                <article class="project-card enhanced">
+                    <div class="project-image">
+                        <svg viewBox="0 0 420 280" width="100%" height="220">
+                            <defs>
+                                <linearGradient id="p3bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f4efe8"/><stop offset="100%" stop-color="#e8dcce"/></linearGradient>
+                            </defs>
+                            <rect width="420" height="280" fill="url(#p3bg)"/>
+                            
+                            <!-- Arduino PCB -->
+                            <g transform="translate(60, 50)">
+                                <rect x="0" y="0" width="280" height="150" rx="10" fill="#1e3a5f"/>
+                                <circle cx="70" cy="75" r="20" fill="#3498db" opacity="0.9"/>
+                                <rect x="100" y="30" width="140" height="20" rx="5" fill="#e74c3c"/>
+                                <rect x="100" y="60" width="140" height="15" rx="5" fill="#f39c12"/>
+                                <rect x="100" y="90" width="140" height="18" rx="5" fill="#2ecc71"/>
+                                
+                                <!-- Headers -->
+                                <rect x="50" y="200" width="230" height="15" rx="3" fill="#34495e"/>
+                                
+                                <!-- LED indicators -->
+                                <circle cx="80" cy="230" r="4" fill="#e74c3c"/>
+                                <circle cx="120" cy="230" r="4" fill="#f39c12"/>
+                                <circle cx="160" cy="230" r="4" fill="#2ecc71"/>
+                                
+                                <!-- MicroUSB -->
+                                <rect x="270" y="205" width="35" height="30" rx="3" fill="#7f8c8d"/>
+                            </g>
+                            
+                            <text x="60" y="280" font-family="monospace" font-size="14">Arduino Prototype — ME 2900 Engineering Control Systems</text>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Arduino Prototype — ME 2900 Engineering</h3>
+                        <p><strong>Control Systems Application:</strong> Practical embedded systems project featuring Arduino microcontroller with sensor integration, real-time data acquisition, and MATLAB/Simulink modeling for system dynamics analysis and validation. Demonstrates practical application of control theory principles in hardware design.</p>
+                        <div class="project-tags">
+                            <span>Arduino</span>
+                            <span>MATLAB</span>
+                            <span>Sensors</span>
+                            <span>Control Systems</span>
+                            <span>Data Acquisition</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Air Motor Cylinder Project -->
+                <article class="project-card enhanced">
+                    <div class="project-image">
+                        <svg viewBox="0 0 420 280" width="100%" height="220">
+                            <defs>
+                                <linearGradient id="p4bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#eef4dc"/><stop offset="100%" stop-color="#dbe8c5"/></linearGradient>
+                            </defs>
+                            <rect width="420" height="280" fill="url(#p4bg)"/>
+                            
+                            <!-- Cylinder Assembly -->
+                            <g transform="translate(70, 60)">
+                                <!-- Main Body -->
+                                <ellipse cx="140" cy="80" rx="40" ry="25" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+                                <ellipse cx="140" cy="80" rx="36" ry="23" fill="#d0d0d0"/>
+                                
+                                <!-- Piston -->
+                                <ellipse cx="140" cy="85" rx="32" ry="24" fill="#e0e0e0"/>
+                                
+                                <!-- Ports/Valves -->
+                                <circle cx="160" cy="70" r="12" fill="#FF6B6B"/>
+                                <circle cx="180" cy="95" r="10" fill="#4ECDC4"/>
+                                
+                                <!-- Connecting Rod -->
+                                <path d="M 160 70 Q 180 80 200 80 L 230 80 Q 240 90 250 95" 
+                                      fill="none" stroke="#8B4513" stroke-width="3"/>
+                                
+                                <!-- Air Lines -->
+                                <path d="M 70 80 L 60 80 L 60 100" 
+                                      stroke="#2ecc71" stroke-width="4" stroke-linecap="round"/>
+                            </g>
+                            
+                            <text x="50" y="240" font-family="monospace" font-size="13">Air Motor Cylinder &amp; Block — Precision Pneumatic Actuation</text>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Air Motor Cylinder &amp; Block Assembly</h3>
+                        <p><strong>Precision Pneumatics:</strong> Optimized flow dynamics and structural integrity for high-performance actuation. Features precision-machined ports, integrated valve system, and robust construction for reliable pneumatic operation.</p>
+                        <div class="project-tags">
+                            <span>Pneumatics</span>
+                            <span>CAD</span>
+                            <span>Fluid Dynamics</span>
+                            <span>Machining</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Nursing Cost Project -->
+                <article class="project-card enhanced">
+                    <div class="project-image">
+                        <svg viewBox="0 0 420 280" width="100%" height="220">
+                            <defs>
+                                <linearGradient id="p5bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f4f6f8"/><stop offset="100%" stop-color="#e8ecf0"/></linearGradient>
+                            </defs>
+                            <rect width="420" height="280" fill="url(#p5bg)"/>
+                            
+                            <!-- Pie Chart: Cost Distribution -->
+                            <g transform="translate(200, 130)">
+                                <circle cx="200" cy="130" r="70" fill="#f8f9fa"/>
+                                <circle cx="200" cy="130" r="55" 
+                                        fill="none" 
+                                        stroke="#4ECDC4" 
+                                        stroke-width="12"
+                                        stroke-dasharray="calc(π*55*0.6, 20)"
+                                        transform="rotate(-90)"/>
+                                
+                                <circle cx="200" cy="130" r="55" 
+                                        fill="none" 
+                                        stroke="#FF6B6B" 
+                                        stroke-width="12"
+                                        stroke-dasharray="calc(π*55*0.25, 20)"
+                                        transform="rotate(45)"/>
+                                
+                                <circle cx="200" cy="130" r="55" 
+                                        fill="none" 
+                                        stroke="#FFD93D" 
+                                        stroke-width="12"
+                                        stroke-dasharray="calc(π*55*0.15, 20)"
+                                        transform="rotate(-135)"/>
+                            </g>
+                            
+                            <!-- Cost Legend -->
+                            <g transform="translate(40, 60)">
+                                <rect x="0" y="0" width="120" height="38" rx="5" fill="#e8f4f8"/>
+                                <circle cx="20" cy="19" r="8" fill="#4ECDC4"/>
+                                <text x="40" y="26" font-family="monospace" font-size="9">Personnel: 60%</text>
+                                
+                                <rect x="0" y="45" width="120" height="38" rx="5" fill="#e8f4f8"/>
+                                <circle cx="20" cy="29" r="8" fill="#FF6B6B"/>
+                                <text x="40" y="36" font-family="monospace" font-size="9">Supplies: 25%</text>
+                                
+                                <rect x="0" y="82" width="120" height="38" rx="5" fill="#e8f4f8"/>
+                                <circle cx="20" cy="29" r="8" fill="#FFD93D"/>
+                                <text x="40" y="36" font-family="monospace" font-size="9">Equipment: 15%</text>
+                            </g>
+                            
+                            <!-- Process Flow -->
+                            <g transform="translate(260, 70)">
+                                <rect x="0" y="0" width="130" height="80" rx="8" fill="#fff" stroke="#dee2e6"/>
+                                
+                                <text x="15" y="30" font-family="monospace" font-size="9">Current</text>
+                                <line x1="45" y1="30" x2="45" y2="38" stroke="#b0bec5"/>
+                                
+                                <text x="15" y="58" font-family="monospace" font-size="9">Optimized</text>
+                            </g>
+                            
+                            <text x="40" y="240" font-family="monospace" font-size="11">Improving Costs in Nursing — Engineering-based Process Optimization</text>
+                        </svg>
+                    </div>
+                    <div class="project-content">
+                        <h3>Improving Costs in Nursing Department</h3>
+                        <p><strong>Operations &amp; Cost Analysis:</strong> Efficiency optimization and cost reduction analysis for nursing department operations through engineering-based process improvements. Applied systems thinking to reduce operational costs while maintaining quality standards.</p>
+                        <div class="project-tags">
+                            <span>Operations</span>
+                            <span>Cost Analysis</span>
+                            <span>Process Optimization</span>
+                            <span>Systems Engineering</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h2>About Me</h2>
-                    <p>I'm Joey Kozlowski, a mechanical engineer at The Ohio State University (3.40 GPA) bridging physical systems and digital intelligence. Currently working as an Undergraduate Teaching Assistant in the Department of Mechanical and Aerospace Engineering.</p>
-                    
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Mechanical Design</h4>
-                            <ul>
-                                <li>SolidWorks & Onshape CAD</li>
-                                <li>MATLAB & Excel</li>
-                                <li>CNC Machining (Lathes, Mills)</li>
-                                <li>3D Printing</li>
-                                <li>Fundamentals of Engineering Projects</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Agentic AI & Software Development</h4>
-                            <ul>
-                                <li>AI Agent Configuration & Workflows</li>
-                                <li>Python/C++ Programming</li>
-                                <li>Reinforcement Learning</li>
-                                <li>LLM Agentic Applications</li>
-                                <li>Mechatronics & Arduino Prototyping</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Professional Experience</h4>
-                            <ul>
-                                <li><strong>CSA Group (Intern, Jun-Aug 2026):</strong> EPA WaterSense testing, AI Agents for procurement use cases</li>
-                                <li><strong>OSU Teaching Assistant:</strong> ME 2850.01 Numerical Methods instruction</li>
-                                <li><strong>Campus Orchestra:</strong> First violinist in symphony ensemble</li>
-                            </ul>
-                        </div>
+            <h2 class="section-title">Engineering Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>CAD & Product Design</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Fusion 360</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
                     </div>
-                    
-                    <div class="resume-download">
-                        <h3>📄 Resume</h3>
-                        <a href="resume.pdf" target="_blank" class="btn btn-outline">View Full Resume</a>
+                    <div class="skill-item">
+                        <span class="skill-name">SolidWorks</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Onshape</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">3D Printing</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
                     </div>
                 </div>
 
-                <div class="about-image">
-                    <!-- No headshot - using technical background image -->
-                    <img src="images/finished-putter-black-anodized.jpg" alt="Zero Torque Putter Design" style="height: 300px; object-fit: cover;">
+                <div class="skill-category">
+                    <h3>Engineering Analysis</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">MATLAB</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Simulink</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Engineering Equation Solver (EES)</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Data Analysis</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Mechanical Engineering</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Thermodynamics</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">System Dynamics</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Kinematics & Mechanism Design</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Machine Design</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Machining</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 65%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Microcontrollers (Arduino IDE)</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Quality Control</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Testing & Validation</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Technical Documentation</span>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item active">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Undergraduate Teaching Assistant</h3>
+                        <span class="timeline-date">OSU Department of Mechanical and Aerospace Engineering</span>
+                        <p>Providing academic support to students in core mechanical engineering courses. Facilitating problem-solving sessions and reinforcing fundamental concepts.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Mechanical Engineering Project Lead</h3>
+                        <span class="timeline-date">The Ohio State University</span>
+                        <p>Led interdisciplinary team projects focusing on quality and testing methodologies. Developed innovative solutions for engineering challenges.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Engineering Research Experience</h3>
+                        <span class="timeline-date">Various Projects</span>
+                        <p>Conducted research in thermodynamics, system dynamics, and kinematics. Contributed to multiple published engineering analyses and simulations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-categories">
+                <h3>Technical Focus Areas</h3>
+                <div class="cat-grid">
+                    <div class="cat-item"><span class="check">✓</span><strong>Thermodynamics</strong></div>
+                    <div class="cat-item"><span class="check">✓</span><strong>System Dynamics</strong></div>
+                    <div class="cat-item"><span class="check">✓</span><strong>Kinematics & Mechanism Design</strong></div>
+                    <div class="cat-item"><span class="check">✓</span><strong>Machine Design</strong></div>
+                    <div class="cat-item"><span class="check">✓</span><strong>Machining</strong></div>
+                    <div class="cat-item"><span class="check">✓</span><strong>Microcontrollers (Arduino)</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume-section" id="resume">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume-content">
+                <div class="resume-preview">
+                    <div class="resume-placeholder">
+                        <svg viewBox="0 0 400 300" width="100%" height="250"><rect x="0" y="0" width="400" height="300" fill="#f8f9fa"/><path d="M 40 40 L 360 40 L 360 260 L 40 260 Z" fill="#fff" stroke="#1e3a5f" stroke-width="2"/><circle cx="80" cy="80" r="35" fill="#1e3a5f" opacity="0.1"/><text x="115" y="90" font-family="monospace" font-size="14">Resume PDF</text><path d="M 280 60 L 300 80 M 280 100 L 300 120 M 280 140 L 300 160" stroke="#e53e3e" stroke-width="2"/><text x="295" y="75" font-family="monospace" font-size="12">Download</text></svg>
+                    </div>
+                </div>
+                <div class="resume-actions">
+                    <a href="/resume.pdf" download="Joseph_Kozlowski_Resume.pdf" class="btn btn-primary">Download Resume (PDF)</a>
+                    <p class="resume-note">Comprehensive resume highlighting education, projects, skills, and technical experience.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section class="contact-section" id="contact">
         <div class="container">
-            <h2>Get in Touch</h2>
-            <p>Open to collaboration on mechanical design and agentic AI projects.</p>
-            
-            <div class="contact-links">
-                <a href="mailto:kozlowski.109@osu.edu" class="contact-link">
-                    📧 kozlowski.109@osu.edu
-                </a>
-                <a href="https://github.com/joeykozlo" class="contact-link">GitHub</a>
-                <a href="https://www.linkedin.com/in/joseph-kozlowski-8255dfs0093636312" class="contact-link">LinkedIn</a>
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always open to discussing engineering opportunities, internship positions, or collaborative projects. Feel free to reach out!</p>
+                    <div class="contact-links">
+                        <a href="mailto:joseph.kozlowski@osu.edu" class="contact-link">
+                            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                            <span>joseph.kozlowski@osu.edu</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M9 19c-5 1.5-2-2.5-2-2.5s4-6 10-6c1.8 0 3 0.7 3.5 1.5l3 3c-.5.7-1.8 1.5-3.5 1.5C12.5 19 7 13.5 7 4c0 0 1-1 4 2s5-1 5 1c0 0 1-1 4 2s1.5 8-5 1z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.93 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.119 3.176.87.84 1.319 1.911 1.319 3.221 0 4.605-2.807 5.625-5.479 5.921.43.352.883 1.102.883 2.222v3.286c0 .319.192.694.801.576C20.566 21.792 24 17.312 24 12c0-6.627-5.373-12-12-12z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
-
-            <footer class="footer">
-                <p>&copy; 2026 Joey Kozlowski. All rights reserved.</p>
-            </footer>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>J.Kozlowski</h3>
+                    <p>Mechanical Engineering Portfolio</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <a href="#about">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#experience">Experience</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#resume">Resume</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">GitHub</a>
+                        <a href="mailto:joseph.kozlowski@osu.edu">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Joseph Kozlowski. All rights reserved.</p>
+                <p>Mechanical Engineering Student | The Ohio State University</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Particle Background -->
+    <canvas id="particles" class="particle-canvas"></canvas>
+
+    <script src="/js/main.js"></script>
 </body>
 </html>
